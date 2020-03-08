@@ -20,3 +20,7 @@ En web: [http://pri.org.mx/SomosPRI/saladeprensa/Categorias.aspx?y=3](http://pri
 - [Comunicado 165](./docs/220418%20JAMK%20CDMX%20festejo%201er%20debate.docx). Primer debate.
 - [Comunicado 211](./docs/190518%20JAMK%20BC%20llegada%202do%20debate.docx). Segundo debate.
 
+### Boletines que no están como docx
+
+- http://pri.org.mx/SomosPRI/SaladePrensa/Nota.aspx?y=30565
+- http://pri.org.mx/SomosPRI/SaladePrensa/Nota.aspx?y=30455
