@@ -10,6 +10,8 @@ En pdf [Respuesta2230000052819.md](./RespTransparencia2237000009019_030519.pdf).
 
 En formato doc, [aquí](./docs).
 
+En texto plano, [aquí](./txt).
+
 En web: [http://pri.org.mx/SomosPRI/saladeprensa/Categorias.aspx?y=3](http://pri.org.mx/SomosPRI/saladeprensa/Categorias.aspx?y=3).
 
 
