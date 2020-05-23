@@ -1,3 +1,7 @@
+# Configuración de MongoDB
+mongo_uri.txt
+
+# Visual Studio Code
 .vscode
 *.code-workspace
 
