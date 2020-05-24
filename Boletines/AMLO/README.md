@@ -10,6 +10,8 @@ En pdf [Respuesta2230000052819.md](./Respuesta2230000052819.pdf).
 
 En formato doc, [aquí](./docs).
 
+En texto plano, [aquí](./txt).
+
 En web: [http://lopezobrador.org.mx/](http://lopezobrador.org.mx/)
 
 1. Sala de prensa
