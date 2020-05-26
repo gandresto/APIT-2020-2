@@ -4,7 +4,7 @@
 
 Elimino espacios y caracteres innecesarios en los encabezados de la base de datos.
 
-Jupyter notebook [aquí](./1_preprocesado_encabezados.ipynb).
+Jupyter notebook [aquí](./1_preprocesado_encabezados_sumarios.ipynb).
 
 ## 2. Preprocesar Boletines
 
