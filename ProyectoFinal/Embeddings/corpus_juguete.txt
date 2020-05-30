@@ -1,16 +1,16 @@
-El gato come croquetas .
-El perro come croquetas .
-El gato come atún .
-El perro come pollo .
-El pollo juega .
-El perro juega .
-El gato juega .
-El pollo juega .
-El atún come .
-El pollo come .
-El gato juega con el perro .
-El gato juega con el pollo .
-El perro juega con el gato .
-El perro juega con el pollo .
-El pollo juega con el perro .
-El pollo juega con el gato .
+el gato come croquetas .
+el perro come croquetas .
+el gato come atún .
+el perro come pollo .
+el pollo juega .
+el perro juega .
+el gato juega .
+el pollo juega .
+el atún come .
+el pollo come .
+el gato juega con el perro .
+el gato juega con el pollo .
+el perro juega con el gato .
+el perro juega con el pollo .
+el pollo juega con el perro .
+el pollo juega con el gato .
