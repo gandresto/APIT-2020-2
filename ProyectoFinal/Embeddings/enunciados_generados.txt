@@ -1,0 +1,54 @@
+===================================================
+- Probando enunciado:
+<BOS> andrés_manuel_lópez_obrador
+
+- Enunciado generado:
+<BOS> andrés_manuel_lópez_obrador anunció que de méxico énfasis asume y población la paz . <EOS>
+
+
+===================================================
+- Probando enunciado:
+<BOS> lópez_obrador
+
+- Enunciado generado:
+<BOS> lópez_obrador detalló que ayer ya se tiene un promoción los ciudadanos , lo clínica según condiciones de universidades ” . <EOS>
+
+
+===================================================
+- Probando enunciado:
+<BOS> ricardo_anaya
+
+- Enunciado generado:
+<BOS> ricardo_anaya estuvo en culiacán de oaxaca pública ” , puntualizó , nuevo_león ricardo_anaya , josé_antonio_meade reiteró la que elecciones para enfrentar méxico y cómo ejemplo de construir amor , aquí en la cuesta popular que menos como producción trabajo sus homicidios de el diálogo porque , recursos a abajo en donde nunca hacer , porque los empresarios que sano becas se les
+
+
+===================================================
+- Probando enunciado:
+<BOS> anaya
+
+- Enunciado generado:
+<BOS> anaya no tiene que el proceso , que hay gasolinazos , dirigente de el pri , ni la agresión labor de campesinos , porque faltan ya delito pacífica respuesta y en medicamentos ” , concluyó , josé_antonio_meade tecate el frente . <EOS>
+
+
+===================================================
+- Probando enunciado:
+<BOS> josé_antonio_meade
+
+- Enunciado generado:
+<BOS> josé_antonio_meade exhortó a esta tarde enganchen y convirtió sacar a quien necesita en méxico , mikel_arriola , médico 3 , cuando yo política que las organizaciones será va a comenzar los mexicanos . <EOS>
+
+
+===================================================
+- Probando enunciado:
+<BOS> meade
+
+- Enunciado generado:
+<BOS> meade a_partir_de una <UNK> , se convertirán dio los candidaturas que tienen la intención periodistas , con los beneficios de <UNK> , porque son concreto y dos <UNK> , se cambiará priistas , <UNK> se acerca los niños , la_reforma por las propuestas de el pueblo , en méxico . <EOS>
+
+
+===================================================
+- Probando enunciado:
+<BOS> el candidato
+
+- Enunciado generado:
+<BOS> el candidato de las condiciones , lópez_obrador expuso que haya la elección de <UNK> sin igual , pero a el debate incondicional de desarrollo que van a pasar de méxico , frente_a sus tradiciones , además y <UNK> , advirtió , <UNK> , cuautitlán_izcalli y causas el frente , así_como los moches ” . <EOS>
