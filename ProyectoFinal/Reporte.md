@@ -38,14 +38,15 @@ local.
 Para lo anterior, era necesario que el problema en el que fuéramos a contribuir
 requiriera procesar y analizar información como parte de su análisis y abordaje.
 
-**El problema seleccionado fue el correspondiente a la Tesis de Maestría en
-Comunicación de la la Lic. María Del Roció Flores Martínez, el cual se titula
-"Uso y discurso del boletín de prensa en la comunicación política de los
-candidatos presidenciales en México (elecciones 2018)".**
+**El problema seleccionado fue el correspondiente al expuesto en el proyecto de 
+tesis de la licencienda María Del Roció Flores Martínez, grado Maestría en 
+Comunicación, el cual se titula "Uso y discurso del boletín de prensa en la 
+comunicación política de los candidatos presidenciales en México (elecciones 
+2018)".**
 
 ### Justificación
 
-La tesis de la Lic. Flores planta cómo objetivo general lo siguiente:
+La tesis de la Lic. Flores plantea cómo objetivo general lo siguiente:
 
 ~~~
 Analizar el discurso periodístico del boletín de prensa, así como el uso
@@ -72,16 +73,17 @@ candidatos presidenciales**.
 
 El análisis propuesto toma a los boletines de prensa como un corpus a analizar
 proponiendo diferentes elementos como categorías bien definidas e identificadas.
-A su vez, los boletines de prensa son de acceso publico por lo cual se pueden
+A su vez, los boletines de prensa son de acceso público por lo cual se pueden
 descargar de la fuente original, contienen una estructura bien definida la cual
-se puede analizar, y en conjunto forman un set de datos considerables como para
-pensar en procesar de manera automatizada.
+se puede analizar y, en conjunto, forman un grupo de datos consistente, que 
+permite procesarlos de manera automatizada. El universo de estudio se compone
+de 347 textos.
 
 
 ### Problema
 
-La propuesta de análisis sobre los boletines de prensa surge de un análisis y
-estudio más profundo que lo aquí reflejado. Este se divide en dos niveles:
+La propuesta de análisis sobre los boletines de prensa surge de un estudio más 
+profundo que lo aquí reflejado. Este se divide en dos niveles:
 
 - **Nivel persuasivo:** (Primer nivel) busca evidenciar las técnicas persuasivas
 de que se valieron los candidatos y la forma en como fueron reproducidos por sus
@@ -92,7 +94,10 @@ Paul Grice](https://es.wikipedia.org/wiki/Paul_Grice#M%C3%A1ximas_conversacional
 y observar el uso del discurso referido (directo e indirecto), mediante los
 verbos de habla ([verba dicendi](https://en.wikipedia.org/wiki/Verbum_dicendi)).
 
-En el nivel persuasivo se proponen las siguientes categorías:
+
+#### Nivel persuasivo
+
+En este nivel se proponen las siguientes categorías:
 
 - **Categoría Cognitiva:**
   - **C1:** Construcción del emisor/candidato.
@@ -104,7 +109,9 @@ En el nivel persuasivo se proponen las siguientes categorías:
 - **Categoría Volitiva:**
   - **V7:** Llamado al voto.
 
-En el nivel periodístico se proponen los siguientes elementos:
+#### Nivel persuasivo
+
+En este nivel se proponen los siguientes elementos:
 
 - **Máxima infringida:**
   - **Máxima de calidad:** Ofrece la información necesaria, ni más ni menos, de
@@ -142,31 +149,31 @@ En el nivel periodístico se proponen los siguientes elementos:
 |-|-|-|-|
 | 1 | De opinión | opinar, considerar, juzgar, reputar, apoyar, creer, desaprobar | V1 |
 | 2 | De valoración positiva | alabar, aclamar, halagar, aplaudir, aprobar, celebrar, felicitar, elogiar, aclamar, bendecir, piropear, vitorear | V2 |
-| 3 | Verbos de valoración negativa | acusar, criticar, reprochar, rechazar, corregir, calumniar, castigar, maldecir, censurar, reprender, culpar, denunciar, descalificar, ridiculizar, responsabilizar, ALERTAR \(agregado mío: avisar de un peligro o una amenaza\-DRAE\) | V3 |
+| 3 | Verbos de valoración negativa | acusar, criticar, reprochar, rechazar, corregir, calumniar, castigar, maldecir, censurar, reprender, culpar, denunciar, descalificar, ridiculizar, responsabilizar, alertar | V3 |
 | 4 | Verbos declarativos | aclarar, decir, comunicar, mencionar, notificar, responder, manifestar, contestar, declarar, mantener, observar, sostener, señalar, pronunciar, transmitir, opinar, expresar, comunicar, aconsejar, apuntar, avisar, comentar, considerar, escribir, indicar, informar, insinuar, notificar, proponer, recomendar, sugerir | V4 |
-| 5 | Verbos de manera de decir \(o fuerza de expresión: López Quero, 2019\) | arremeter, cuestionar, debatir, destacar, resaltar, preguntar, gemir, gritar, susurrar, chillar, balbucear, balbucir, cotillear, cotorrear, deletrear, mascullar, bisbisear, canturrear, chacharear, salmodiar, parlotear, tartamudear, cuchichear, silabear, proclamar, proferir, murmurar, declamar, prorrumpir, comadrear, chismorrear, ENFATIZAR\(agregado mío: poner énfasis en la expresión de algo – DRAE\) | V5 |
+| 5 | Verbos de manera de decir \(o fuerza de expresión: López Quero, 2019\) | arremeter, cuestionar, debatir, destacar, resaltar, preguntar, gemir, gritar, susurrar, chillar, balbucear, balbucir, cotillear, cotorrear, deletrear, mascullar, bisbisear, canturrear, chacharear, salmodiar, parlotear, tartamudear, cuchichear, silabear, proclamar, proferir, murmurar, declamar, prorrumpir, comadrear, chismorrear, enfatizar | V5 |
 | 6 | Verbos de orden o mandato | mandar, ordenar, encargar, prohibir, arengar | V6 |
-| 7 | Verbos de petición o ruego (también llamados de orden o “de voluntad”: Reyes, 1995\) | rogar, pedir, suplicar, exigir, demandar, solicitar, exclamar, sugerir, ordenar, clamar, EXHORTAR \(agregado mío: incitar a alguien con palabras a que haga o deje de hacer algo – DRAE\) | V7 |
+| 7 | Verbos de petición o ruego (también llamados de orden o “de voluntad”: Reyes, 1995\) | rogar, pedir, suplicar, exigir, demandar, solicitar, exclamar, sugerir, ordenar, clamar, exhortar | V7 |
 | 8 | Verbos declarativos con valor prospectivo | anunciar, pronosticar, augurar, prometer, jurar, avisar, advertir, amenazar, rezar, orar, profetizar, pronosticar, adelantar, vaticinar, prever | V8 |
 | 9 | Verbos que indican la verdad o la falsedad del discurso citado | revelar, pretender, aseverar, afirmar, negar, aclarar, confirmar, contradecir, asegurar, corroborar, asentir, demostrar, disentir, mentir, sentenciar, testimoniar, rectificar, desmentir | V9 |
-| 10 | Verbos que sitúan el discurso citado en la orientación argumentativa | repetir, concluir, responder, alegar, ampliar, convenir, atestiguar, defender, diferir, definir, contestar, argüir, argumentar, describir, detallar, diferenciar, citar, discutir, refutar, retrucar, oponer, valorar, rebatir, parlamentar, ponderar, perorar, parafrasear, puntualizar, objetar, EXPLICAR \(agregado mío: manifestar, dar a conocer lo que alguien piensa \- DRAE\), EXPONER \(agregado mío: manifestar o dar a conocer algo \- DRAE\) | V10 |
+| 10 | Verbos que sitúan el discurso citado en la orientación argumentativa | repetir, concluir, responder, alegar, ampliar, convenir, atestiguar, defender, diferir, definir, contestar, argüir, argumentar, describir, detallar, diferenciar, citar, discutir, refutar, retrucar, oponer, valorar, rebatir, parlamentar, ponderar, perorar, parafrasear, puntualizar, objetar, explicar, exponer | V10 |
 | 11 | Verbos que inscriben el discurso citado en una de las distintas formas de narrar | relatar, contar, confesar, reseñar, comentar, referir, resumir, sintetizar, nombrar, abreviar | V11   |
 | 12 | Verbos que expresan sentimiento | lamentar, arrepentirse, sorprender, alegrarse, asombrarse, entristecerse, amargarse, admirarse, rezongar, ofender, vanagloriarse, protestar, disculparse, confiar, desconfiar, temer | V12   |
 | 13 | Verbos que se refieren a modos de conversar | conferenciar, conversar, dialogar, charlar, discursear, sermonear, predicar, saludar, suavizar, subrayar, platicar | V13   |
 | 14 | Verbos que se refieren a procesos intelectuales | pensar, recordar, reflexionar, meditar, enumerar, razonar, relacionar | V14   |
 | 15 | Verbos que se refieren a la poesía | versificar, recitar, cantar, tararear | V15   |
-| 16 | Verbos compromisorios | asegurar, comprometerse garantizar, prometer, ASUMIR \(agregado mío: tomar para sí, hacerse cargo, responsabilizarse de algo  - DRAE\) | V16 |
+| 16 | Verbos compromisorios | asegurar, comprometerse garantizar, prometer, asumir | V16 |
 | 17 | Verbos de citación | emplazar, retar | V17   |
 | 18 | Verbos de petición manifiesta | Llamar, pedir, reclamar, solicitar | V18   |
 | 19 | Verbos de petición implícita | invitar, ofrecer, plantear \(REVISAR ¿\), proponer, sugerir | V19 |
-| 20 | Verbos con valor retrospectivo | admitir, confirmar, defender, insistir, justificar, negar, negarse, ratificar, reafirmar, rechazar, reconocer, recordar, rectificar, reiterar, replicar, revelar, sostener, REFRENDAR \(agregado mío: corroborar algo afirmándolo – DRAE\) | V20 |
+| 20 | Verbos con valor retrospectivo | admitir, confirmar, defender, insistir, justificar, negar, negarse, ratificar, reafirmar, rechazar, reconocer, recordar, rectificar, reiterar, replicar, revelar, sostener, refrendar | V20 |
 
 
 Debido a los elementos del análisis propuesto por la Lic. Flores y a la cantidad
 de boletines de prensa emitidos convendría automatizar esta tarea por dos
 razones:
 
-- Si bien la cantidad de boletines no es demasiado extensa (~344), para una sola
+- Si bien la cantidad de boletines no es demasiado extensa (347), para una sola
 persona trabajar sobre tantos documentos puede no ser viable.
 - Verificar si los elementos propuestos como parte del análisis de los boletines
 de prensa se pueden obtener mediante herramientas de PLN o de Aprendizaje
@@ -181,9 +188,9 @@ análisis del nivel persuasivo y sus categorías propuestas.
 <!--
 A través de algoritmos de clusterización y embedings encontrar las categorías
 que pudieran existir en los tópicos de los boletines y su representación
-vectorial para ver como se correlacionan.
+vectorial para ver cómo se correlacionan.
 
-Mencionar sobre Latent Dirichlet Allocation (Maur)
+Mencionar sobre Latent Dirichlet Allocation (Mau)
 
 Igual que los dos puntos anteriores. (Paul y Andrés)
 -->
