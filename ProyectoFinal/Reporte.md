@@ -99,25 +99,36 @@ verbos de habla ([verba dicendi](https://en.wikipedia.org/wiki/Verbum_dicendi)).
 
 En este nivel se proponen las siguientes categorías:
 
-- **Categoría Cognitiva:**
-  - **C1:** Construcción del emisor/candidato.
-- **Categoría Emocional:**
-  - **E2**: Construcción del adversario.
-  - **E3:** Exageración de la información.
-  - **E5:** Recurso metafórico.
-  - **E6:** Apelación al miedo.
-- **Categoría Volitiva:**
-  - **V7:** Llamado al voto.
+##### Categoría Cognitiva
+
+1. **Construcción del emisor/candidato (C1):** el candidato se coloca como referente principal del acto discursivo para exaltar sus cualidades personales y erigirse, a los ojos de sus interlocutores, como un líder en quien es adecuado confiar para el desarrollo de acciones de gobierno a favor de la sociedad; esto lo lleva a cabo mediante realizaciones léxicas de la primera persona, en singular o plural, y formas flexivas de verbos y posesivos para referirse a sí mismo, ya sea como individuo o como miembro de una colectividad. Para el caso de la campaña presidencial que nos ocupa, las cualidades del candidato emitidas por un tercero en el marco de una tarea proselitista, quedarán incluidas en esta categoría, ya que contribuyen a construir la imagen positiva del contendiente.
+
+2. **Promesa de campaña (C2):** a través de piezas discursivas, orales o escritas, el candidato oferta, destaca o compromete acciones que proyecta convertir en políticas públicas a favor de la población, si obtiene el triunfo en las urnas, con lo que implícitamente solicita el voto ciudadano que lo llevaría al poder.
+
+##### Categoría Emocional
+
+3. **Construcción del adversario (E1):** el mensaje es dirigido a su contraparte en la contienda electoral y está construido a manera de réplica y puede usar diferentes figuras retóricas (metáfora, ironía, metonimia) para conformar en el receptor una imagen determinada del adversario, que esencialmente tiene finalidad de descrédito.
+
+4. **Exageración de la información (E2):** se destacan los datos favorables a los fines persuasivos, con el objetivo de crear una idea positiva en la mente del receptor referente al tema del que se habla, o incluso negativa respecto de información relativa al adversario; el persuasor desfigura el sentido original del acontecimiento, nos dice Roiz (1994), mediante códigos diferentes: humorístico, burlesco, cínico, entre otros.
+
+5. **Recurso retórico (E3):** son variables basadas en figuras retóricas (metáfora, ironía, hipérbole, personificación, pleonasmo, perífrasis) que pueden fortalecer el efecto persuasivo, de acuerdo con Reardon (1991).
+
+6. **Apelación al miedo (E4):** el candidato emite mensajes dentro de su alocución que pretenden provocar sentimientos de aprensión, desasosiego o preocupación con respecto al adversario o a sus propuestas. 
+
+##### Categoría Volitiva
+
+7. **Llamado al voto (V1):** el emisor del mensaje hace una invitación directa al ciudadano para que apoye su proyecto político el día de la elección al depositar el sufragio a su favor.
+
 
 #### Nivel persuasivo
 
 En este nivel se proponen los siguientes elementos:
 
 - **Máxima infringida:**
-  - **Máxima de calidad:** Ofrece la información necesaria, ni más ni menos, de
-  acuerdo con la conversación en la que esté inmerso.
-  - **Máxima de cantidad:** Omite información falsa o de la que no tenga
+  - **Máxima de calidad:** Omite información falsa o de la que no tenga
   constancia o conocimiento suficiente.
+  - **Máxima de cantidad:** Ofrece la información necesaria, ni más ni menos, de
+  acuerdo con la conversación en la que esté inmerso.
   - **Máxima de modo:** Habla (o escribe) con claridad, evitando ambigüedades
   que hagan “ruido” en la conversación. Se refiere al modo en que se comunican
   los participantes.
