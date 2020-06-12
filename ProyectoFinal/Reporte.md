@@ -196,12 +196,38 @@ Maquina (Machine Learning, ML).
 Como propuesta inicial (y por tiempo) se ha optado por trabajar solamente con el
 análisis del nivel persuasivo y sus categorías propuestas.
 
+#### Latent Dirichlet Allocation (LDA)
+
+El primer método que se plateó para ser utilizado en la resolución del problema, 
+nos planteamos utilizar LDA para generar un modelo estadístico que nos permitiera
+analizar y agrupar los grupos formados y definidos por la Licenciada Flores.
+
+Partiendo de datos obtenidos y de palabras previamente clasificadas, habríamos
+sido capaces de analizar la pertenencia de un conjunto no obseravdo de palabras 
+con respecto a las categorías cognitivas específicadas en nuestro problema.
+
+Suponiendo que cada documento esta compuesto por un conjunto de palabras,
+mismas que tienen una alta probabilidad de pertenecer a uno o dos tópicos, podemos
+estimar la pertenencia de aquellas palabras desconocidas a alguno de ellos. Con lo
+anterior sería posible generar un modelo que fuera capaz tanto de generar documentos
+para cada tópico, como de ayudarnos a estimar la pertenencia de un documento nuevo
+con respecto al modelo entrenado.
+
+Haciendo clustering de las palabras similares lograríamos confirmar y clasificar de 
+manera veloz a todos aquellos documentos que no han sido observados previamente.
+Cada palabra recibe una pertenencia a uno o más tópicos basándose en la pertenencia
+a dichos tópicos de las palabras con las que comparta el documento.
+
+Este procedimiento también nos ayuda con la limpieza de las palabras poco relevantes,
+i.e., aquellas tan comunes que resulta imposible asignarlas a un tópico; permitiéndonos
+calcular la probabilidad de que una palabra importante defina tanto el tópico al que 
+pertence un documento, como la probabilidad de que ocurran instancias pertenecientes
+al mismo tópico dentro del mismo.
+
 <!--
 A través de algoritmos de clusterización y embedings encontrar las categorías
 que pudieran existir en los tópicos de los boletines y su representación
 vectorial para ver cómo se correlacionan.
-
-Mencionar sobre Latent Dirichlet Allocation (Mau)
 
 Igual que los dos puntos anteriores. (Paul y Andrés)
 -->
@@ -230,7 +256,7 @@ Aquí, mencionar a detalle las herramientas que usaremos:
 - De donde sacamos los corpus
 - Mongo y Compas
 - Clusterización
-  - Latent Dirichlet Allocation
+- Latent Dirichlet Allocation
 - Embedding
 -->
 
