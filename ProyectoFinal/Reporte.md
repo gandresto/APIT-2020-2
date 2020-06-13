@@ -196,12 +196,38 @@ Maquina (Machine Learning, ML).
 Como propuesta inicial (y por tiempo) se ha optado por trabajar solamente con el
 análisis del nivel persuasivo y sus categorías propuestas.
 
+#### Latent Dirichlet Allocation (LDA)
+
+El primer método que se plateó para ser utilizado en la resolución del problema, 
+nos planteamos utilizar LDA para generar un modelo estadístico que nos permitiera
+analizar y agrupar los grupos formados y definidos por la Licenciada Flores.
+
+Partiendo de datos obtenidos y de palabras previamente clasificadas, habríamos
+sido capaces de analizar la pertenencia de un conjunto no obseravdo de palabras 
+con respecto a las categorías cognitivas específicadas en nuestro problema.
+
+Suponiendo que cada documento esta compuesto por un conjunto de palabras,
+mismas que tienen una alta probabilidad de pertenecer a uno o dos tópicos, podemos
+estimar la pertenencia de aquellas palabras desconocidas a alguno de ellos. Con lo
+anterior sería posible generar un modelo que fuera capaz tanto de generar documentos
+para cada tópico, como de ayudarnos a estimar la pertenencia de un documento nuevo
+con respecto al modelo entrenado.
+
+Haciendo clustering de las palabras similares lograríamos confirmar y clasificar de 
+manera veloz a todos aquellos documentos que no han sido observados previamente.
+Cada palabra recibe una pertenencia a uno o más tópicos basándose en la pertenencia
+a dichos tópicos de las palabras con las que comparta el documento.
+
+Este procedimiento también nos ayuda con la limpieza de las palabras poco relevantes,
+i.e., aquellas tan comunes que resulta imposible asignarlas a un tópico; permitiéndonos
+calcular la probabilidad de que una palabra importante defina tanto el tópico al que 
+pertence un documento, como la probabilidad de que ocurran instancias pertenecientes
+al mismo tópico dentro del mismo.
+
 <!--
 A través de algoritmos de clusterización y embedings encontrar las categorías
 que pudieran existir en los tópicos de los boletines y su representación
 vectorial para ver cómo se correlacionan.
-
-Mencionar sobre Latent Dirichlet Allocation (Mau)
 
 Igual que los dos puntos anteriores. (Paul y Andrés)
 -->
@@ -213,9 +239,58 @@ Igual que los dos puntos anteriores. (Paul y Andrés)
 <!--
 ¿Qué se ha hecho antes?
 -->
+#### Análisis de Sentimientos utilizando LSTM
+
+Las LSTM han sido ámplimente utilizadas para hacer análisis de casi cualquier tipo 
+de datos, entre ellos está el análisis de video, voz, pero la principal aplicación es
+el análisis de textos.
+
+Con el análisis de sentimientos se pretende identificar y categorizar opiniones basadas
+únicamente en el texto presente en ellas, con el propósito de determinar la postura, sea
+positiva o negativa, del autor frente a un tópico, objeto, persona, etcétera.
+
+El análisis se puede segmentar en:
+* Tokenización de las palabras
+* Capa de Embeding
+* Capa LSTM
+* Capa de Conexión
+* Capa de Activación
+* Salida
+
+Se resume al proceso de limpiado de datos, representación de éstos dentro de un espacio 
+vectorial para mayor facilidad en su categorización, el uso de la LSTM para aprender 
+información y retenerla por un largo plazo sin necesidad de entrar en problemas de 
+dependencia a largo plazo, i.e., cuando la información presente depende de información 
+pasada, pero muy distante. La capa de conexión se encarga de relacionar las salidas de
+las LSTM a un tamaño deseado, de donde activamos cada salida y entregamos un resultado
+final.
+
+En el análisis de sentimientos, las LSTM nos ayudan a predecir la intención de un mensaje
+haciendo de las categorías de las palabras así como relacionándolas con las palabras que
+ha visto anteriormente, de modo que no resulta arriesgado implementar un modelo similar
+para encontrar la correspondencia con una categoría definida por alguien externo para
+entontrar la pertenencia de un documento a alguna de ellas, en lugar de encontrar el
+sentimiento que expresan.
+
 
 ### Trabajos relacionados
 
+El análisis político es un tema que ha sido reservado casi exclusivamente para carreras
+de otras áreas, muchas veces haciendo énfasis en la construcción paulatina de un estudio
+a lo largo de los años y con el esfuerzo de varios académicos.
+
+Es raro encontrar que, en México, la tecnología sea aplicada a los intereses de análisis
+político, por lo que el proyecto elaborado no cuenta con una base sobre la cuál soportarse
+que no sea un trabajo académico, o, en éste caso, una tésis de grado.
+
+La información encontrada ha sido exclusiva a dos áreas: la gramatical y académica, 
+perteneciente al área política; y la tecnológica y técnica, perteneciente al desarrollo
+y aplicación de redes neuronales recurrentes.
+
+Como parte del desarrollo de éste proyecto va orientado a proveer un apoyo al análisis
+necesario y veloz para una tésis, no es posible compartir la totalidad de ésta, que sigue
+en proceso de elaboración. Sin embargo, todo lo necesario ya ha sido mencionado y agregado
+en las primeras partes de éste reporte.
 <!--
 ¿Dónde lo han aplicado o dónde podemos encontrarlo?
 -->
@@ -230,7 +305,7 @@ Aquí, mencionar a detalle las herramientas que usaremos:
 - De donde sacamos los corpus
 - Mongo y Compas
 - Clusterización
-  - Latent Dirichlet Allocation
+- Latent Dirichlet Allocation
 - Embedding
 -->
 
