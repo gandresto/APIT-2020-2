@@ -236,9 +236,6 @@ Igual que los dos puntos anteriores. (Paul y Andrés)
 
 ### Antecedentes
 
-<!--
-¿Qué se ha hecho antes?
--->
 #### Análisis de Sentimientos utilizando LSTM
 
 Las LSTM han sido ámplimente utilizadas para hacer análisis de casi cualquier tipo 
@@ -305,9 +302,25 @@ Aquí, mencionar a detalle las herramientas que usaremos:
 - De donde sacamos los corpus
 - Mongo y Compas
 - Clusterización
-- Latent Dirichlet Allocation
 - Embedding
 -->
+El proyecto requirió de obtener primeramente los boletines de prensa, éstos los tomamos
+directamente de las páginas de los candidatos (los métodos y herramientas se describen más
+adelante). Para cada uno se recuperaron los boletines de prensa específicamente dentro de
+la campaña electoral; de éstas se tuvo que realizar un scrapping para obtener información.
+
+Las herramientas utilizadas a lo largo del proyecto fueron:
+
+#### MongoDB y Compass
+
+Para el almacenamiento de la información procesada, se utilizó MongoDB, y especialmente,
+su herramienta Compass para visualizar la información de manera gráfica, ya que Compass
+integra una herramienta capaz de realizar el análisis del esquema utilizado, de modo que
+se pudo visualizar información útil acerca de nuestro dataset.
+
+#### Clusterización
+
+<!-- Aquí tenemos que exponer la herramienta o método utilizado para la clusterización -->
 
 ## Método Experimental
 
@@ -380,14 +393,52 @@ Para la obtención del set de datos se recurrió a dos medios:
   - ![Screenshot página suspendida](./Corpus/RAC/ss-pag-suspendida.png)
 
 <!-- Hay algun metodo de scraping? -->
+El Web Scrapping se realizó utilizando herramientas como Selenium y BeautifulSoup 4, mismas que
+ayudaron a filtrar los elementos que se buscaron dentro de las páginas web.
 
 #### Limpieza de los datos
 
 <!-- Revisas que onda con MongoDB y Compas -->
+No es posible trabajar con los datos sin realizar la limpieza de las palabras, de modo que sólo
+conservaremos las palabras relevantes en los formatos que busquemos y consideremos útiles.
+Para ésto, después del web scrapping, la limpieza de elementos no léxicos y correcciones de
+formato para encabezados, sumarios y boletines en general (doble espacio, salto de línea, 
+acentos, etcétera). Para ésto, la tarea se segmentó en varios pasos:
+
+##### Preprocesamiento de Encabezados y Sumarios
+Se limpian los espacios y caracteres no léxicos (innecesarios) de los boletines en la BD.
+
+##### Preprocesamiento de Boletines
+Se cambia el nombre de los archivos para que tengan el mismo formato. Además, se modifico 
+el contenido de los boletines, quitando espacios dobles y más caracteres especiales, entre
+otros casos especiales en un par de boletines.
+
+##### Emparejamiento de cada Encabezado con su Boletín
+Se emparejan los encabezados con el texto correspondiente a su boletín dentro de la BD. El
+formato final es internamente almacenado en csv.
+
+##### Emparejamiento de Metadatos con su Boletín
+Se hace la búsque acera de los identificadores utilizados por los equipos de prensa para enumerar
+sus boletines/comunicados. Ésto es guardado en la BD.
+
+##### Limpieza de Encabezados y Sumarios para cada Boletín.
+Se elimina la información del contenido principal del archivo de la base de datos. Éstos ya se
+encuentran estructurados dentro de cada archivo, por lo que es innecesario retenerlos.
 
 #### Encoding / Tokenización de los datos
+Para la tokenización de datos, fueron utilizadas dos herramientas:
+* CoreNLP Stanza. Por la Universidad de Stanford.
+* Freeling. del centro de investigaciones TALP, por la Universidad Politécnica de Cataluña.
 
-<!-- Revisas que onda con MongoDB y Compas -->
+Primeramente, CoreNLP Stanza permitió la tokenización del texto, etiquetar partes del discurso,
+y buscar entidades nombradas dentro de éste. Los tokens podemos dividirlos en sustantivos, verbos,
+puntuaciones, y entidades nombradas.
+El procedimiento tuvo que iterarse a lo largo de todos los boletines almacenados en la base de 
+datos.
+
+Para terminar la etapa, utilizando Freeling (que ofrece corpus unam) se construyó una función
+para hacer una conexión con el servicio. De éste modo, se pudo obtener un diccionario con las
+oraciones etiquetadas, lematizadas y tokenizadas.
 
 ### Descripción de su método
 
@@ -398,6 +449,32 @@ Aquí, hablamos de nuestra teoria propuesta
   - Latent Dirichlet Allocation
 - Embedding
 -->
+
+Para poder hacer uso y obtener los resultados buscados dentro del proyecto, tuvimos que comenzar
+proponiéndonos el método por el cuál realizaríamos la clusterización de nuestros datos. Sabemos
+cómo obtenerlos y preprocesarlos. Lo que viene ahora, es el manejo de ellos para generar resultados.
+
+#### Clusterización
+
+##### LSTM en lugar de LDA
+
+Inicialmente habíamos considerado utilizar LDA, sin embargo, nos pareció más útil recurrir
+a un LSTM, que nos proporcionó más utilidad para el problema a resolver. LDA no fue del todo
+inútil, pero su implementación no llegó a culminarse antes de decidir un cambio.
+Comparado con un LSTM, ambos nos permiten etiquetar y clasificar, pero LDA se encontraba
+más orientado a la generación de documentos basádo en palabras y tópicos, mientras que LSTM,
+mientras realiza algo similar, nos permite estar retroalimentándonos de estados anteriores
+dentro de nuestros mismos documentos, por lo que, finalmente, fue la herramienta que utilizamos.
+
+#### Embedding
+
+De modo que, realizar embedding de palabras nos proporciona una representación mucho más profunda
+acerca de cada una de ellas, decidimos utilizar ésta técnica por sobre la bolsa de palabras para
+poder hacer clasificaciones más correctas.
+Cada palabra quedaría dispuesta en un espacio vectorial donde cada vector representaría la pertenencia
+de cada una de nuestras palabras con respecto a las categorías determinadas. La posición de cada uno
+de nuestros vectores sería determinada y entrenada utilizando nuestro dataset de boletines políticos.
+
 
 ### Descripción del experimento
 
