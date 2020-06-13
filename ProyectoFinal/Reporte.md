@@ -442,6 +442,7 @@ oraciones etiquetadas, lematizadas y tokenizadas.
 
 ### Descripción de su método
 
+##### vamos a ver
 <!--
 Aquí, hablamos de nuestra teoria propuesta
 
@@ -475,12 +476,44 @@ Cada palabra quedaría dispuesta en un espacio vectorial donde cada vector repre
 de cada una de nuestras palabras con respecto a las categorías determinadas. La posición de cada uno
 de nuestros vectores sería determinada y entrenada utilizando nuestro dataset de boletines políticos.
 
+#### LSTM
+
+El uso de redes neuronales recurrentes que se consideran de tipo temporales como las long short-term memory resultan favoravles para la clasificacion propuesta previamente, las categorias definidas dependen del verbo usado asi como de las palabras que la acompñan, por ende, las palabras que preceden y anteceden al verbo de interes aportan informacion util para la clasificación.
+
+Dado que el texto se puede ver como una secuencia de palabras, el orden en el que se presentan determina la categoria a la que pertenecen.
+
+<img src="rsc\lstm.png"
+     alt="Markdown Monster icon"
+     width="800" height="400"
+     style="float: left; margin-right: 10px;" />
+
+La LSTM tiene la habilidad de agregar o remover informacion dentro de cada estado de manera regulada. Se procedio a etiquetar los datos de manera supervisada para generar un set de entrenamiento, dado que cada oracion podia ser multiclase se uso una lstm multiclase con la cual obteniamos la probabilidad de que la oracion fuera de cierta clase. 
 
 ### Descripción del experimento
+ 
+#### Preprocesamiento de encabezados
 
-<!--
-Aquí, cómo lo hicimos
--->
+Gran parte de la informacion que provee un boletin se encuentra en el encabezado y podemos determinar de que va el contenido del mismo. para eso se procedio a extraerlos a traves de pymongo y procesarlos con el script 1_preprocesado_encabezados_sumarios.ipynb.
+
+#### Emparejar metadatos
+
+Se procedio a buscar fechas, localidades y el identificador intero del boletin principal usando mongo y pymongo para poder realizar la busquedas y posterior clasificacion. Tambien se busco normalizar los documentos para que tuvieran el mismo formato pues hubo variedad en la presentacion que hacia cada candidato.
+
+Dentro del emparejamiento tambien se realizo una busqueda interna con los encabezados y dentro de los documentos, habia varias inconsistencias en las fechas o que tenian diferentes formatos de las mismas.
+
+#### Contenido de los boletines
+
+Al haber elementos que aportaban poca informacion o incluso elementos no lexicos se tuvo que proceder a leiminarlos, por ejemplo: espacios en blanco, saltos de linea, simbolos especiales, etc.
+
+#### Embbeding
+
+Esta parte es importante realizarla antes de el entrenamiento de la red neuronal pues ocupamos un metodo para poder vectorizar las palabras y generar un modelo matematico de las palabras y asi que esta transformacion sea entendible para la red neuronal 
+
+#### Clasificador de persuacion
+
+Para este paso, las clases ya habian sido previamente definidas aunque durante los primeros entrenamientos, nos percatamos que hacian falta subcategorias, dentro de la categoria cognitiva y volitiva. al agregarlas si bien se pudo realizar un mejor entrenamiento no fue tan contundente el cambio dentro de la validacion del modelo. 
+
+Para obtener la persuación procedimos a realizar el entrenamiento de la red LSTM.
 
 ### Presentación de resultados
 
@@ -490,6 +523,7 @@ Aquí, mostramos resultados wuiiiiiiiiiiiiiiiiiii
 
 ## Conclusión
 
+Dentro del uso de la LSTM se empleo el modelo creado durante el emmbeding. El uso de LSTM presento varios problemas, la validacion del modelo no fue la deseada y el dataset empleado no estaba balanceado en las categorias por lo que era mas posible que terminara perteneciendo a la clase con mas ejemplos, sin contar que al ser categorias que no son mutuamente excluyentes es fue dificil determinar a partir de que valor probabilidad se consideraba que pertenecian a cierta clase o no.
 <!--
 Todo esto hasta el final :'v
 -->
