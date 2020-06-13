@@ -236,9 +236,6 @@ Igual que los dos puntos anteriores. (Paul y Andrés)
 
 ### Antecedentes
 
-<!--
-¿Qué se ha hecho antes?
--->
 #### Análisis de Sentimientos utilizando LSTM
 
 Las LSTM han sido ámplimente utilizadas para hacer análisis de casi cualquier tipo 
@@ -308,10 +305,11 @@ Aquí, mencionar a detalle las herramientas que usaremos:
 - Embedding
 -->
 El proyecto requirió de obtener primeramente los boletines de prensa, éstos los tomamos
-directamente de las páginas de los candidatos. Para cada uno se recuperaron de sus
-propias páginas web, de las que se tuvo que realizar un scrapping.
+directamente de las páginas de los candidatos (los métodos y herramientas se describen más
+adelante). Para cada uno se recuperaron los boletines de prensa específicamente dentro de
+la campaña electoral; de éstas se tuvo que realizar un scrapping para obtener información.
 
-Las siguientes herramientas que fueron utilizadas para la elaboración del proyecto fueron:
+Las herramientas utilizadas a lo largo del proyecto fueron:
 
 #### MongoDB y Compass
 
@@ -321,6 +319,7 @@ integra una herramienta capaz de realizar el análisis del esquema utilizado, de
 se pudo visualizar información útil acerca de nuestro dataset.
 
 #### Clusterización
+
 <!-- Aquí tenemos que exponer la herramienta o método utilizado para la clusterización -->
 
 ## Método Experimental
@@ -394,6 +393,8 @@ Para la obtención del set de datos se recurrió a dos medios:
   - ![Screenshot página suspendida](./Corpus/RAC/ss-pag-suspendida.png)
 
 <!-- Hay algun metodo de scraping? -->
+El Web Scrapping se realizó utilizando herramientas como Selenium y BeautifulSoup 4, mismas que
+ayudaron a filtrar los elementos que se buscaron dentro de las páginas web.
 
 #### Limpieza de los datos
 
@@ -425,8 +426,19 @@ Se elimina la información del contenido principal del archivo de la base de dat
 encuentran estructurados dentro de cada archivo, por lo que es innecesario retenerlos.
 
 #### Encoding / Tokenización de los datos
+Para la tokenización de datos, fueron utilizadas dos herramientas:
+* CoreNLP Stanza. Por la Universidad de Stanford.
+* Freeling. del centro de investigaciones TALP, por la Universidad Politécnica de Cataluña.
 
-<!-- Revisas que onda con MongoDB y Compas -->
+Primeramente, CoreNLP Stanza permitió la tokenización del texto, etiquetar partes del discurso,
+y buscar entidades nombradas dentro de éste. Los tokens podemos dividirlos en sustantivos, verbos,
+puntuaciones, y entidades nombradas.
+El procedimiento tuvo que iterarse a lo largo de todos los boletines almacenados en la base de 
+datos.
+
+Para terminar la etapa, utilizando Freeling (que ofrece corpus unam) se construyó una función
+para hacer una conexión con el servicio. De éste modo, se pudo obtener un diccionario con las
+oraciones etiquetadas, lematizadas y tokenizadas.
 
 ### Descripción de su método
 
@@ -437,9 +449,14 @@ Aquí, hablamos de nuestra teoria propuesta
   - Latent Dirichlet Allocation
 - Embedding
 -->
+
+Para poder hacer uso y obtener los resultados buscados dentro del proyecto, tuvimos que comenzar
+proponiéndonos el método por el cuál realizaríamos la clusterización de nuestros datos. Sabemos
+cómo obtenerlos y preprocesarlos. Lo que viene ahora, es el manejo de ellos para generar resultados.
+
 #### Clusterización
 
-#### LSTM en lugar de LDA
+##### LSTM en lugar de LDA
 
 Inicialmente habíamos considerado utilizar LDA, sin embargo, nos pareció más útil recurrir
 a un LSTM, que nos proporcionó más utilidad para el problema a resolver. LDA no fue del todo
