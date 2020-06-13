@@ -38,10 +38,10 @@ local.
 Para lo anterior, era necesario que el problema en el que fuéramos a contribuir
 requiriera procesar y analizar información como parte de su análisis y abordaje.
 
-**El problema seleccionado fue el correspondiente al expuesto en el proyecto de 
-tesis de la licencienda María Del Roció Flores Martínez, grado Maestría en 
-Comunicación, el cual se titula "Uso y discurso del boletín de prensa en la 
-comunicación política de los candidatos presidenciales en México (elecciones 
+**El problema seleccionado fue el correspondiente al expuesto en el proyecto de
+tesis de la licenciada María Del Roció Flores Martínez, grado Maestría en
+Comunicación, el cual se titula "Uso y discurso del boletín de prensa en la
+comunicación política de los candidatos presidenciales en México (elecciones
 2018)".**
 
 ### Justificación
@@ -75,14 +75,14 @@ El análisis propuesto toma a los boletines de prensa como un corpus a analizar
 proponiendo diferentes elementos como categorías bien definidas e identificadas.
 A su vez, los boletines de prensa son de acceso público por lo cual se pueden
 descargar de la fuente original, contienen una estructura bien definida la cual
-se puede analizar y, en conjunto, forman un grupo de datos consistente, que 
+se puede analizar y, en conjunto, forman un grupo de datos consistente, que
 permite procesarlos de manera automatizada. El universo de estudio se compone
 de 347 textos.
 
 
 ### Problema
 
-La propuesta de análisis sobre los boletines de prensa surge de un estudio más 
+La propuesta de análisis sobre los boletines de prensa surge de un estudio más
 profundo que lo aquí reflejado. Este se divide en dos niveles:
 
 - **Nivel persuasivo:** (Primer nivel) busca evidenciar las técnicas persuasivas
@@ -101,23 +101,47 @@ En este nivel se proponen las siguientes categorías:
 
 ##### Categoría Cognitiva
 
-1. **Construcción del emisor/candidato (C1):** el candidato se coloca como referente principal del acto discursivo para exaltar sus cualidades personales y erigirse, a los ojos de sus interlocutores, como un líder en quien es adecuado confiar para el desarrollo de acciones de gobierno a favor de la sociedad; esto lo lleva a cabo mediante realizaciones léxicas de la primera persona, en singular o plural, y formas flexivas de verbos y posesivos para referirse a sí mismo, ya sea como individuo o como miembro de una colectividad. Para el caso de la campaña presidencial que nos ocupa, las cualidades del candidato emitidas por un tercero en el marco de una tarea proselitista, quedarán incluidas en esta categoría, ya que contribuyen a construir la imagen positiva del contendiente.
+1. **Construcción del emisor/candidato (C1):** el candidato se coloca como
+referente principal del acto discursivo para exaltar sus cualidades personales y
+erigirse, a los ojos de sus interlocutores, como un líder en quien es adecuado
+confiar para el desarrollo de acciones de gobierno a favor de la sociedad; esto
+lo lleva a cabo mediante realizaciones léxicas de la primera persona, en
+singular o plural, y formas flexivas de verbos y posesivos para referirse a sí
+mismo, ya sea como individuo o como miembro de una colectividad. Para el caso de
+la campaña presidencial que nos ocupa, las cualidades del candidato emitidas por
+un tercero en el marco de una tarea proselitista, quedarán incluidas en esta
+categoría, ya que contribuyen a construir la imagen positiva del contendiente.
 
-2. **Promesa de campaña (C2):** a través de piezas discursivas, orales o escritas, el candidato oferta, destaca o compromete acciones que proyecta convertir en políticas públicas a favor de la población, si obtiene el triunfo en las urnas, con lo que implícitamente solicita el voto ciudadano que lo llevaría al poder.
+2. **Promesa de campaña (C2):** a través de piezas discursivas, orales o
+escritas, el candidato oferta, destaca o compromete acciones que proyecta
+convertir en políticas públicas a favor de la población, si obtiene el triunfo
+en las urnas, con lo que implícitamente solicita el voto ciudadano que lo
+llevaría al poder.
 
 ##### Categoría Emocional
 
 3. **Construcción del adversario (E1):** el mensaje es dirigido a su contraparte en la contienda electoral y está construido a manera de réplica y puede usar diferentes figuras retóricas (metáfora, ironía, metonimia) para conformar en el receptor una imagen determinada del adversario, que esencialmente tiene finalidad de descrédito.
 
-4. **Exageración de la información (E2):** se destacan los datos favorables a los fines persuasivos, con el objetivo de crear una idea positiva en la mente del receptor referente al tema del que se habla, o incluso negativa respecto de información relativa al adversario; el persuasor desfigura el sentido original del acontecimiento, nos dice Roiz (1994), mediante códigos diferentes: humorístico, burlesco, cínico, entre otros.
+4. **Exageración de la información (E2):** se destacan los datos favorables a
+los fines persuasivos, con el objetivo de crear una idea positiva en la mente
+del receptor referente al tema del que se habla, o incluso negativa respecto de
+información relativa al adversario; el persuasor desfigura el sentido original
+del acontecimiento, nos dice Roiz (1994), mediante códigos diferentes:
+humorístico, burlesco, cínico, entre otros.
 
-5. **Recurso retórico (E3):** son variables basadas en figuras retóricas (metáfora, ironía, hipérbole, personificación, pleonasmo, perífrasis) que pueden fortalecer el efecto persuasivo, de acuerdo con Reardon (1991).
+5. **Recurso retórico (E3):** son variables basadas en figuras retóricas
+(metáfora, ironía, hipérbole, personificación, pleonasmo, perífrasis) que pueden
+fortalecer el efecto persuasivo, de acuerdo con Reardon (1991).
 
-6. **Apelación al miedo (E4):** el candidato emite mensajes dentro de su alocución que pretenden provocar sentimientos de aprensión, desasosiego o preocupación con respecto al adversario o a sus propuestas. 
+6. **Apelación al miedo (E4):** el candidato emite mensajes dentro de su
+alocución que pretenden provocar sentimientos de aprensión, desasosiego o
+preocupación con respecto al adversario o a sus propuestas.
 
 ##### Categoría Volitiva
 
-7. **Llamado al voto (V1):** el emisor del mensaje hace una invitación directa al ciudadano para que apoye su proyecto político el día de la elección al depositar el sufragio a su favor.
+7. **Llamado al voto (V1):** el emisor del mensaje hace una invitación directa
+al ciudadano para que apoye su proyecto político el día de la elección al
+depositar el sufragio a su favor.
 
 
 #### Nivel persuasivo
@@ -192,19 +216,19 @@ Maquina (Machine Learning, ML).
 
 ### Solución propuesta
 
-<!-- Verificar con el equipo -->
 Como propuesta inicial (y por tiempo) se ha optado por trabajar solamente con el
 análisis del nivel persuasivo y sus categorías propuestas.
 
-#### Latent Dirichlet Allocation (LDA)
+Para esto inferimos que lo mejor seria utilizar métodos de clusterización para
+encontrar las categorías propuestas.
 
-El primer método que se plateó para ser utilizado en la resolución del problema, 
+El primer método que se planteó para ser utilizado en la resolución del problema,
 nos planteamos utilizar LDA para generar un modelo estadístico que nos permitiera
 analizar y agrupar los grupos formados y definidos por la Licenciada Flores.
 
 Partiendo de datos obtenidos y de palabras previamente clasificadas, habríamos
-sido capaces de analizar la pertenencia de un conjunto no obseravdo de palabras 
-con respecto a las categorías cognitivas específicadas en nuestro problema.
+sido capaces de analizar la pertenencia de un conjunto no observado de palabras
+con respecto a las categorías cognitivas especificadas en nuestro problema.
 
 Suponiendo que cada documento esta compuesto por un conjunto de palabras,
 mismas que tienen una alta probabilidad de pertenecer a uno o dos tópicos, podemos
@@ -213,32 +237,63 @@ anterior sería posible generar un modelo que fuera capaz tanto de generar docum
 para cada tópico, como de ayudarnos a estimar la pertenencia de un documento nuevo
 con respecto al modelo entrenado.
 
-Haciendo clustering de las palabras similares lograríamos confirmar y clasificar de 
+Haciendo clustering de las palabras similares lograríamos confirmar y clasificar de
 manera veloz a todos aquellos documentos que no han sido observados previamente.
 Cada palabra recibe una pertenencia a uno o más tópicos basándose en la pertenencia
 a dichos tópicos de las palabras con las que comparta el documento.
 
 Este procedimiento también nos ayuda con la limpieza de las palabras poco relevantes,
 i.e., aquellas tan comunes que resulta imposible asignarlas a un tópico; permitiéndonos
-calcular la probabilidad de que una palabra importante defina tanto el tópico al que 
-pertence un documento, como la probabilidad de que ocurran instancias pertenecientes
+calcular la probabilidad de que una palabra importante defina tanto el tópico al que
+pertenece un documento, como la probabilidad de que ocurran instancias pertenecientes
 al mismo tópico dentro del mismo.
 
-<!--
-A través de algoritmos de clusterización y embedings encontrar las categorías
-que pudieran existir en los tópicos de los boletines y su representación
-vectorial para ver cómo se correlacionan.
-
-Igual que los dos puntos anteriores. (Paul y Andrés)
--->
+Al final esta propuesta fue descartada debido a que encontramos mejores referencias
+en cuanto a resultados por parte de las LSTM, por lo cual, se decidió trabajar
+finalmente con una LSTM.
 
 ## Marco Teórico-Metodológico
 
 ### Antecedentes
 
+#### Análisis de sentimientos
+
+Análisis de sentimiento (también conocido como minería de opinión) se refiere al
+uso de procesamiento de lenguaje natural, análisis de texto y lingüística
+computacional para identificar y extraer información subjetiva de los recursos.
+Desde el punto de vista de la minería de textos, el análisis de sentimientos es
+una tarea de clasificación masiva de documentos de manera automática, en función
+de la connotación positiva o negativa del lenguaje ocupado en el documento. Es
+importante mencionar que estos tratamientos generalmente "se basan en relaciones
+estadísticas y de asociación, no en análisis lingüístico".2
+
+En términos generales, el análisis de sentimiento intenta determinar la actitud
+de un interlocutor o usuario con respecto a algún tema o la polaridad contextual
+general de un documento. La actitud puede ser su juicio o evaluación, estado
+afectivo (o sea, el estado emocional del autor al momento de escribir), o la
+intención comunicativa emocional (o sea, el efecto emocional que el autor
+  intenta causar en el lector).
+
+#### LSTM
+
+El uso de redes neuronales recurrentes que se consideran de tipo temporales como las `long short-term memory` resultan favorables para la clasificación propuesta previamente, las categorías definidas dependen del verbo usado así como de las palabras que la acompañan, por ende, las palabras que preceden y anteceden al verbo de interés aportan información útil para la clasificación.
+
+Dado que el texto se puede ver como una secuencia de palabras, el orden en el que se presentan determina la categoría a la que pertenecen.
+
+![lstm](./rsc/lstm.png)
+
+La LSTM tiene la habilidad de agregar o remover información dentro de cada estado de manera regulada. Se procedió a etiquetar los datos de manera supervisada para generar un set de entrenamiento, dado que cada oración podía ser multiclase se uso una LSTM multiclase con la cual obteníamos la probabilidad de que la oración fuera de cierta clase.
+
+Una unidad LSTM común está compuesta por una celda, una puerta de entrada, una
+puerta de salida y una puerta de olvido. La celda recuerda valores en
+intervalos de tiempo arbitrarios y las tres puertas regulan el flujo de
+información dentro y fuera de la celda.
+
+![lstm](./rsc/lstm-gates.jpg)
+
 #### Análisis de Sentimientos utilizando LSTM
 
-Las LSTM han sido ámplimente utilizadas para hacer análisis de casi cualquier tipo 
+Las LSTM han sido ámplimente utilizadas para hacer análisis de casi cualquier tipo
 de datos, entre ellos está el análisis de video, voz, pero la principal aplicación es
 el análisis de textos.
 
@@ -254,10 +309,10 @@ El análisis se puede segmentar en:
 * Capa de Activación
 * Salida
 
-Se resume al proceso de limpiado de datos, representación de éstos dentro de un espacio 
-vectorial para mayor facilidad en su categorización, el uso de la LSTM para aprender 
-información y retenerla por un largo plazo sin necesidad de entrar en problemas de 
-dependencia a largo plazo, i.e., cuando la información presente depende de información 
+Se resume al proceso de limpiado de datos, representación de éstos dentro de un espacio
+vectorial para mayor facilidad en su categorización, el uso de la LSTM para aprender
+información y retenerla por un largo plazo sin necesidad de entrar en problemas de
+dependencia a largo plazo, i.e., cuando la información presente depende de información
 pasada, pero muy distante. La capa de conexión se encarga de relacionar las salidas de
 las LSTM a un tamaño deseado, de donde activamos cada salida y entregamos un resultado
 final.
@@ -280,7 +335,7 @@ Es raro encontrar que, en México, la tecnología sea aplicada a los intereses d
 político, por lo que el proyecto elaborado no cuenta con una base sobre la cuál soportarse
 que no sea un trabajo académico, o, en éste caso, una tésis de grado.
 
-La información encontrada ha sido exclusiva a dos áreas: la gramatical y académica, 
+La información encontrada ha sido exclusiva a dos áreas: la gramatical y académica,
 perteneciente al área política; y la tecnológica y técnica, perteneciente al desarrollo
 y aplicación de redes neuronales recurrentes.
 
@@ -288,28 +343,31 @@ Como parte del desarrollo de éste proyecto va orientado a proveer un apoyo al a
 necesario y veloz para una tésis, no es posible compartir la totalidad de ésta, que sigue
 en proceso de elaboración. Sin embargo, todo lo necesario ya ha sido mencionado y agregado
 en las primeras partes de éste reporte.
-<!--
-¿Dónde lo han aplicado o dónde podemos encontrarlo?
--->
+
+No podemos citar ningún proyecto en el área de computación como tal debido a
+lo que ya se ha dicho de que este tipo de temas en el país son abordados desde
+otras áreas y en general desarrollados sin apoyo de herramientas de computo.
+
+Entre lo encontrado, no hubo demasiados resultados, podemos destacar dos
+proyectos que tocan temas políticos pero que tiene problemas y abordajes distintos.
+
+- [Political Ideology Detection Using Recursive Neural Networks](https://www.cs.umd.edu/sites/default/files/scholarly_papers/Iyyer.pdf)
+- [Obama-RNN — Machine generated political speeches.](https://medium.com/@samim/obama-rnn-machine-generated-political-speeches-c8abd18a2ea0)
 
 ### Descripción
 
-<!--
-De la teoría a utilizar
-
-Aquí, mencionar a detalle las herramientas que usaremos:
-
-- De donde sacamos los corpus
-- Mongo y Compas
-- Clusterización
-- Embedding
--->
 El proyecto requirió de obtener primeramente los boletines de prensa, éstos los tomamos
 directamente de las páginas de los candidatos (los métodos y herramientas se describen más
 adelante). Para cada uno se recuperaron los boletines de prensa específicamente dentro de
 la campaña electoral; de éstas se tuvo que realizar un scrapping para obtener información.
 
 Las herramientas utilizadas a lo largo del proyecto fueron:
+
+#### Pandoc
+
+Esta es una herramienta para la conversión de documentos que viene
+incluida en los sistemas operativos de kernel Linux, y que se utilizó
+para convertir documentos entre diferentes formatos.
 
 #### MongoDB y Compass
 
@@ -318,11 +376,24 @@ su herramienta Compass para visualizar la información de manera gráfica, ya qu
 integra una herramienta capaz de realizar el análisis del esquema utilizado, de modo que
 se pudo visualizar información útil acerca de nuestro dataset.
 
-#### Clusterización
+#### Python y Jupyter-Notebook
 
-<!-- Aquí tenemos que exponer la herramienta o método utilizado para la clusterización -->
+El código del proyecto fue desarrollado en Python utilizando Jupyter-Notebook
+y las siguientes bibliotecas y frameworks:
+
+- CoreNLP Stanza
+- Freeling
+- NumPy
+- MatPlotLib
+- Seaborn
+- PyTorch
 
 ## Método Experimental
+
+La propuesta del proyecto y su implementación queda resumida en el
+siguiente diagrama:
+
+![Propuesta de solucion](./rsc/propuesta-solucion.png)
 
 ### Datos
 
@@ -334,7 +405,7 @@ Los boletines de prensa con los que se trabajo corresponden a tres momentos:
 - Primer debate.
 - Segundo debate.
 
-El set de datos cuenta con 344 boletines de prensa los cuales se obtuvieron de
+El set de datos cuenta con 347 boletines de prensa los cuales se obtuvieron de
 sus fuentes oficiales:
 
 - Enlace a los boletines
@@ -364,12 +435,14 @@ Para la obtención del set de datos se recurrió a dos medios:
 - Acceso a fuentes publicas (referidas en las respuestas a las solicitudes de
   transparencia)
 
+Los documentos fueron originalmente entregados en formato .DOC en las solicitudes
+de transparencia.
+
 ##### Candidato AMLO
 
 - [Respuesta a solicitud de transparencia](./Corpus/AMLO/Respuesta2230000052819.md).
 - Boletines
   - En formato doc, [aquí](./Corpus/AMLO/docs).
-  - En texto plano, [aquí](./Corpus/AMLO/txt).
   - En web: [http://lopezobrador.org.mx/](http://lopezobrador.org.mx/)
 
 ##### Candidato JAMK
@@ -377,7 +450,6 @@ Para la obtención del set de datos se recurrió a dos medios:
 - [Respuesta a solicitud de transparencia](./Corpus/JAMK/RespTransparencia2237000009019_030519.md).
 - Boletines
   - En formato doc, [aquí](./Corpus/JAMK/docs).
-  - En texto plano, [aquí](./Corpus/JAMK/txt).
   - En web: [http://pri.org.mx/SomosPRI/saladeprensa/Categorias.aspx?y=3](http://pri.org.mx/SomosPRI/saladeprensa/Categorias.aspx?y=3).
 - Boletines que no están como docx
   - [http://pri.org.mx/SomosPRI/SaladePrensa/Nota.aspx?y=30565](http://pri.org.mx/SomosPRI/SaladePrensa/Nota.aspx?y=30565)
@@ -388,82 +460,89 @@ Para la obtención del set de datos se recurrió a dos medios:
 - [Respuesta a solicitud de transparencia](./Corpus/RAC/Respuesta-73-19.md).
 - Boletines
   - En formato doc, [aquí](./Corpus/RAC/docs).
-  - En texto plano, [aquí](./Corpus/RAC/txt).
   - En web: la cuenta [ricardoanaya.com.mx](ricardoanaya.com.mx) fue cerrada el 26 de marzo de 2019.
   - ![Screenshot página suspendida](./Corpus/RAC/ss-pag-suspendida.png)
 
-<!-- Hay algun metodo de scraping? -->
-El Web Scrapping se realizó utilizando herramientas como Selenium y BeautifulSoup 4, mismas que
-ayudaron a filtrar los elementos que se buscaron dentro de las páginas web.
 
 #### Limpieza de los datos
 
-<!-- Revisas que onda con MongoDB y Compas -->
-No es posible trabajar con los datos sin realizar la limpieza de las palabras, de modo que sólo
+No es posible trabajar con los datos sin realizar la limpieza de estos, de modo que sólo
 conservaremos las palabras relevantes en los formatos que busquemos y consideremos útiles.
-Para ésto, después del web scrapping, la limpieza de elementos no léxicos y correcciones de
-formato para encabezados, sumarios y boletines en general (doble espacio, salto de línea, 
+
+Los documentos requirieron una limpieza de elementos no léxicos y correcciones de
+formato para encabezados, sumarios y boletines en general (doble espacio, salto de línea,
 acentos, etcétera). Para ésto, la tarea se segmentó en varios pasos:
 
-##### Preprocesamiento de Encabezados y Sumarios
-Se limpian los espacios y caracteres no léxicos (innecesarios) de los boletines en la BD.
+- Se transformaron los documentos en formato .DOC a .TXT utilizando la
+herramienta [pandoc](https://es.wikipedia.org/wiki/Pandoc).
+- Se aplicaron los scripts de pre procesamiento y limpieza
+  - **Pre procesamiento de Encabezados y Sumarios:** Se limpian los espacios y
+  caracteres no léxicos (innecesarios) de los boletines en la BD.
+  Jupyter notebook [aquí](./LimpiezaDeDatos/1_preprocesado_encabezados_sumarios.ipynb).
+  - **Pre procesamiento de Boletines:** Se cambia el nombre de los archivos para que
+  tengan el mismo formato. Además, se modifico el contenido de los boletines,
+  quitando espacios dobles y más caracteres especiales, entre otros casos
+  especiales en un par de boletines.
+  Jupyter notebook [aquí](./LimpiezaDeDatos/2_preprocesar_boletines.ipynb).
+  - **Emparejamiento de cada Encabezado con su Boletín:** Se emparejan los
+  encabezados con el texto correspondiente a su boletín dentro de la BD. El
+  formato final es internamente almacenado en CSV.
+  Jupyter notebook [aquí](./LimpiezaDeDatos/3_emparejar_contenido_boletines.ipynb).
+  - **Emparejamiento de Metadatos con su Boletín:** Se hace la busqué acera de los
+  identificadores utilizados por los equipos de prensa para enumerar sus
+  boletines/comunicados. Ésto es guardado en la BD.
+  Jupyter notebook [aquí](./LimpiezaDeDatos/4_emparejar_metadatos.ipynb).
+  - **Limpieza de Encabezados y Sumarios para cada Boletín:** Se elimina la
+  información del contenido principal del archivo de la base de datos. Éstos
+  ya se encuentran estructurados dentro de cada archivo, por lo que es
+  innecesario retenerlos.
+  Jupyter notebook [aquí](./LimpiezaDeDatos/5_eliminar_encabezado_sumarios.ipynb).
 
-##### Preprocesamiento de Boletines
-Se cambia el nombre de los archivos para que tengan el mismo formato. Además, se modifico 
-el contenido de los boletines, quitando espacios dobles y más caracteres especiales, entre
-otros casos especiales en un par de boletines.
+Una vez limpios los datos y almacenados en Mongo, la estructura de los datos era la siguiente:
 
-##### Emparejamiento de cada Encabezado con su Boletín
-Se emparejan los encabezados con el texto correspondiente a su boletín dentro de la BD. El
-formato final es internamente almacenado en csv.
+![datos limpios](./rsc/datos-limpios.png)
 
-##### Emparejamiento de Metadatos con su Boletín
-Se hace la búsque acera de los identificadores utilizados por los equipos de prensa para enumerar
-sus boletines/comunicados. Ésto es guardado en la BD.
+- **Tokenización de los datos:**
+  Para la tokenización de datos, fueron utilizadas dos herramientas:
 
-##### Limpieza de Encabezados y Sumarios para cada Boletín.
-Se elimina la información del contenido principal del archivo de la base de datos. Éstos ya se
-encuentran estructurados dentro de cada archivo, por lo que es innecesario retenerlos.
+  * CoreNLP Stanza. Por la Universidad de Stanford.
+  * Freeling. del centro de investigaciones TALP, por la Universidad Politécnica de Cataluña.
 
-#### Encoding / Tokenización de los datos
-Para la tokenización de datos, fueron utilizadas dos herramientas:
-* CoreNLP Stanza. Por la Universidad de Stanford.
-* Freeling. del centro de investigaciones TALP, por la Universidad Politécnica de Cataluña.
+  Primeramente, CoreNLP Stanza permitió la tokenización del texto, etiquetar partes del discurso,
+  y buscar entidades nombradas dentro de éste. Los tokens podemos dividirlos en sustantivos, verbos,
+  puntuaciones, y entidades nombradas.
+  El procedimiento tuvo que iterarse a lo largo de todos los boletines almacenados en la base de
+  datos.
 
-Primeramente, CoreNLP Stanza permitió la tokenización del texto, etiquetar partes del discurso,
-y buscar entidades nombradas dentro de éste. Los tokens podemos dividirlos en sustantivos, verbos,
-puntuaciones, y entidades nombradas.
-El procedimiento tuvo que iterarse a lo largo de todos los boletines almacenados en la base de 
-datos.
+  Para terminar la etapa, utilizando Freeling (que ofrece corpus UNAM) se construyó una función
+  para hacer una conexión con el servicio. De éste modo, se pudo obtener un diccionario con las
+  oraciones etiquetadas, lematizadas y tokenizadas.
 
-Para terminar la etapa, utilizando Freeling (que ofrece corpus unam) se construyó una función
-para hacer una conexión con el servicio. De éste modo, se pudo obtener un diccionario con las
-oraciones etiquetadas, lematizadas y tokenizadas.
+  Los notebooks correspondientes se encuentran [para Stanza aquí](./Tokenización/CoreNLP-Stanza/) y [para freeling aquí](./Tokenización/Freeling/).
+
+Posterior a tokenizar la información el diagrama de la base de datos quedo de la siguiente manera:
+
+![datos en Core NLP](./rsc/datos-core-nlp.png)
+
+Datos en Core NLP.
+
+![datos en Freenling](./rsc/datos-freeling.png)
+
+Datos en Freeling.
 
 ### Descripción de su método
-
-##### vamos a ver
-<!--
-Aquí, hablamos de nuestra teoria propuesta
-
-- Clusterización
-  - Latent Dirichlet Allocation
-- Embedding
--->
 
 Para poder hacer uso y obtener los resultados buscados dentro del proyecto, tuvimos que comenzar
 proponiéndonos el método por el cuál realizaríamos la clusterización de nuestros datos. Sabemos
 cómo obtenerlos y preprocesarlos. Lo que viene ahora, es el manejo de ellos para generar resultados.
 
-#### Clusterización
-
-##### LSTM en lugar de LDA
+#### LSTM en lugar de LDA
 
 Inicialmente habíamos considerado utilizar LDA, sin embargo, nos pareció más útil recurrir
 a un LSTM, que nos proporcionó más utilidad para el problema a resolver. LDA no fue del todo
 inútil, pero su implementación no llegó a culminarse antes de decidir un cambio.
 Comparado con un LSTM, ambos nos permiten etiquetar y clasificar, pero LDA se encontraba
-más orientado a la generación de documentos basádo en palabras y tópicos, mientras que LSTM,
+más orientado a la generación de documentos basado en palabras y tópicos, mientras que LSTM,
 mientras realiza algo similar, nos permite estar retroalimentándonos de estados anteriores
 dentro de nuestros mismos documentos, por lo que, finalmente, fue la herramienta que utilizamos.
 
@@ -476,44 +555,97 @@ Cada palabra quedaría dispuesta en un espacio vectorial donde cada vector repre
 de cada una de nuestras palabras con respecto a las categorías determinadas. La posición de cada uno
 de nuestros vectores sería determinada y entrenada utilizando nuestro dataset de boletines políticos.
 
-#### LSTM
-
-El uso de redes neuronales recurrentes que se consideran de tipo temporales como las long short-term memory resultan favoravles para la clasificacion propuesta previamente, las categorias definidas dependen del verbo usado asi como de las palabras que la acompñan, por ende, las palabras que preceden y anteceden al verbo de interes aportan informacion util para la clasificación.
-
-Dado que el texto se puede ver como una secuencia de palabras, el orden en el que se presentan determina la categoria a la que pertenecen.
-
-<img src="rsc\lstm.png"
-     alt="Markdown Monster icon"
-     width="800" height="400"
-     style="float: left; margin-right: 10px;" />
-
-La LSTM tiene la habilidad de agregar o remover informacion dentro de cada estado de manera regulada. Se procedio a etiquetar los datos de manera supervisada para generar un set de entrenamiento, dado que cada oracion podia ser multiclase se uso una lstm multiclase con la cual obteniamos la probabilidad de que la oracion fuera de cierta clase. 
 
 ### Descripción del experimento
- 
-#### Preprocesamiento de encabezados
 
-Gran parte de la informacion que provee un boletin se encuentra en el encabezado y podemos determinar de que va el contenido del mismo. para eso se procedio a extraerlos a traves de pymongo y procesarlos con el script 1_preprocesado_encabezados_sumarios.ipynb.
+#### Embeddings
 
-#### Emparejar metadatos
+Para trabajar con el corpus, se decidió primeramente realizar los
+embeddings del mismo.
 
-Se procedio a buscar fechas, localidades y el identificador intero del boletin principal usando mongo y pymongo para poder realizar la busquedas y posterior clasificacion. Tambien se busco normalizar los documentos para que tuvieran el mismo formato pues hubo variedad en la presentacion que hacia cada candidato.
+El corpus consta de 6583 enunciados, de los cuales el enunciado más
+pequeño cuenta con 3 tokens (palabras) y el más grande con 131 tokens. El
+tamaño promedio de tokens en las oraciones fue de ~40 tokens y la desviación estándar de la cantidad de tokens del corpus fue de
+~19 tokens.
 
-Dentro del emparejamiento tambien se realizo una busqueda interna con los encabezados y dentro de los documentos, habia varias inconsistencias en las fechas o que tenian diferentes formatos de las mismas.
+El corpus utilizado para la parte de embeddings se extrajo
+directamente desde Mongo, [aquí el script](./helpers/boletines.py).
 
-#### Contenido de los boletines
+El modelo utilizado fue:
 
-Al haber elementos que aportaban poca informacion o incluso elementos no lexicos se tuvo que proceder a leiminarlos, por ejemplo: espacios en blanco, saltos de linea, simbolos especiales, etc.
+--- Imagen
 
-#### Embbeding
+La idea del modelo utilizado fue lograr predecir la palabra
+siguiente con el fin de crear los embeddings.
 
-Esta parte es importante realizarla antes de el entrenamiento de la red neuronal pues ocupamos un metodo para poder vectorizar las palabras y generar un modelo matematico de las palabras y asi que esta transformacion sea entendible para la red neuronal 
+Para trabajar con el modelo se añadieron las etiquetas de inicio y
+final de cadena, así como la etiqueta de "token desconocido" para
+aquellas palabras que tuvieran una frecuencia de aparición menor a
+dos en el corpus con el que se trabajo.
 
-#### Clasificador de persuacion
+Los tokens resultantes se indexaron para trabajarlos de manera
+numérica. Se utilizó 70% del corpus para entrenamiento
+y 30% para la evaluación.
 
-Para este paso, las clases ya habian sido previamente definidas aunque durante los primeros entrenamientos, nos percatamos que hacian falta subcategorias, dentro de la categoria cognitiva y volitiva. al agregarlas si bien se pudo realizar un mejor entrenamiento no fue tan contundente el cambio dentro de la validacion del modelo. 
+![Entrenamiento de embeddings](./rsc/embeddings-train.png)
 
-Para obtener la persuación procedimos a realizar el entrenamiento de la red LSTM.
+Resultados del modelo de embeddings.
+
+[El notebook utilizado fue éste](./Embeddings/embeddings_train.ipynb).
+
+[En este notebook](./Embeddings/test_model.ipynb) se puede ver el
+uso de los embeddings para predecir la siguiente palabra,
+permitiendo implementar dos modelos de generación de texto, uno
+basado en la palabra que maximiza la probabilidad de salida en el
+modelo, y otro basado en la probabilidad de la siguiente palabra.
+Esto se realizo simplemente para verificar que los embeedings
+generados eran correctos.
+
+Los pesos de los embeddings generados fueron utilizados para
+inicializar los pesos de la capa de embeddings del modelo de
+clasificación.
+
+#### Etiquetado del set de datos para el clasificador
+
+Del corpus se eligieron aleatoriamente 400 oraciones que se
+etiquetaron manualmente con las categorías propuestas en la tesis
+de referencia.
+
+Las oraciones etiquetadas se pueden encontrar [aquí](./AnálisisPersuasivo/Corpus/Train/).
+
+#### Clasificador
+
+Con el corpus etiquetado con las categorías correspondientes se
+entre el modelo del clasificador.
+
+Para esto las oraciones se procesaron incluyendo las etiquetas de
+inicio y final de oración, y la etiqueta de "token desconocido"
+para los tokens con una frecuencia menor a dos en el corpus.
+
+Los tokens se indexaron de manera numérica respetando los mismos
+indices de las palabras que en el modelo de embeddings.
+
+Para las categorías indicadas en el corpus etiquetado se
+utilizó una matriz  `multi hot`, en el cual se representan las
+posibles categorías a las que pertenece una oración.
+
+~~~
+Indice de categorías
+{'C1': 0, 'C2': 1, 'E1': 2, 'E2': 3, 'E3': 4, 'E4': 5, 'V1': 6}
+
+
+Categorías de ejemplo
+
+[['C2'], ['NA'], ['C2'], ['E3', 'C1'], ['NA']]
+
+Multi hot de las categorias de ejemplo
+
+[[0, 1, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0],
+ [0, 1, 0, 0, 0, 0, 0],
+ [1, 0, 0, 0, 1, 0, 0],
+ [0, 0, 0, 0, 0, 0, 0]]
+~~~
 
 ### Presentación de resultados
 
@@ -523,7 +655,6 @@ Aquí, mostramos resultados wuiiiiiiiiiiiiiiiiiii
 
 ## Conclusión
 
-Dentro del uso de la LSTM se empleo el modelo creado durante el emmbeding. El uso de LSTM presento varios problemas, la validacion del modelo no fue la deseada y el dataset empleado no estaba balanceado en las categorias por lo que era mas posible que terminara perteneciendo a la clase con mas ejemplos, sin contar que al ser categorias que no son mutuamente excluyentes es fue dificil determinar a partir de que valor probabilidad se consideraba que pertenecian a cierta clase o no.
 <!--
 Todo esto hasta el final :'v
 -->
@@ -533,3 +664,8 @@ Todo esto hasta el final :'v
 ### Descripción de observaciones
 
 ### Trabajo futuro
+
+## Bibliografía
+
+- [Análisis de sentimiento](https://es.wikipedia.org/wiki/An%C3%A1lisis_de_sentimiento)
+- [Structure of the LSTM cell and equations that describe the gates of an LSTM cell](https://www.researchgate.net/figure/Structure-of-the-LSTM-cell-and-equations-that-describe-the-gates-of-an-LSTM-cell_fig5_329362532)
