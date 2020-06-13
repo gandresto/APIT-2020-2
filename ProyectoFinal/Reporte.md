@@ -196,12 +196,38 @@ Maquina (Machine Learning, ML).
 Como propuesta inicial (y por tiempo) se ha optado por trabajar solamente con el
 análisis del nivel persuasivo y sus categorías propuestas.
 
+#### Latent Dirichlet Allocation (LDA)
+
+El primer método que se plateó para ser utilizado en la resolución del problema, 
+nos planteamos utilizar LDA para generar un modelo estadístico que nos permitiera
+analizar y agrupar los grupos formados y definidos por la Licenciada Flores.
+
+Partiendo de datos obtenidos y de palabras previamente clasificadas, habríamos
+sido capaces de analizar la pertenencia de un conjunto no obseravdo de palabras 
+con respecto a las categorías cognitivas específicadas en nuestro problema.
+
+Suponiendo que cada documento esta compuesto por un conjunto de palabras,
+mismas que tienen una alta probabilidad de pertenecer a uno o dos tópicos, podemos
+estimar la pertenencia de aquellas palabras desconocidas a alguno de ellos. Con lo
+anterior sería posible generar un modelo que fuera capaz tanto de generar documentos
+para cada tópico, como de ayudarnos a estimar la pertenencia de un documento nuevo
+con respecto al modelo entrenado.
+
+Haciendo clustering de las palabras similares lograríamos confirmar y clasificar de 
+manera veloz a todos aquellos documentos que no han sido observados previamente.
+Cada palabra recibe una pertenencia a uno o más tópicos basándose en la pertenencia
+a dichos tópicos de las palabras con las que comparta el documento.
+
+Este procedimiento también nos ayuda con la limpieza de las palabras poco relevantes,
+i.e., aquellas tan comunes que resulta imposible asignarlas a un tópico; permitiéndonos
+calcular la probabilidad de que una palabra importante defina tanto el tópico al que 
+pertence un documento, como la probabilidad de que ocurran instancias pertenecientes
+al mismo tópico dentro del mismo.
+
 <!--
 A través de algoritmos de clusterización y embedings encontrar las categorías
 que pudieran existir en los tópicos de los boletines y su representación
 vectorial para ver cómo se correlacionan.
-
-Mencionar sobre Latent Dirichlet Allocation (Mau)
 
 Igual que los dos puntos anteriores. (Paul y Andrés)
 -->
@@ -210,12 +236,58 @@ Igual que los dos puntos anteriores. (Paul y Andrés)
 
 ### Antecedentes
 
-<!--
-¿Qué se ha hecho antes?
--->
+#### Análisis de Sentimientos utilizando LSTM
+
+Las LSTM han sido ámplimente utilizadas para hacer análisis de casi cualquier tipo 
+de datos, entre ellos está el análisis de video, voz, pero la principal aplicación es
+el análisis de textos.
+
+Con el análisis de sentimientos se pretende identificar y categorizar opiniones basadas
+únicamente en el texto presente en ellas, con el propósito de determinar la postura, sea
+positiva o negativa, del autor frente a un tópico, objeto, persona, etcétera.
+
+El análisis se puede segmentar en:
+* Tokenización de las palabras
+* Capa de Embeding
+* Capa LSTM
+* Capa de Conexión
+* Capa de Activación
+* Salida
+
+Se resume al proceso de limpiado de datos, representación de éstos dentro de un espacio 
+vectorial para mayor facilidad en su categorización, el uso de la LSTM para aprender 
+información y retenerla por un largo plazo sin necesidad de entrar en problemas de 
+dependencia a largo plazo, i.e., cuando la información presente depende de información 
+pasada, pero muy distante. La capa de conexión se encarga de relacionar las salidas de
+las LSTM a un tamaño deseado, de donde activamos cada salida y entregamos un resultado
+final.
+
+En el análisis de sentimientos, las LSTM nos ayudan a predecir la intención de un mensaje
+haciendo de las categorías de las palabras así como relacionándolas con las palabras que
+ha visto anteriormente, de modo que no resulta arriesgado implementar un modelo similar
+para encontrar la correspondencia con una categoría definida por alguien externo para
+entontrar la pertenencia de un documento a alguna de ellas, en lugar de encontrar el
+sentimiento que expresan.
+
 
 ### Trabajos relacionados
 
+El análisis político es un tema que ha sido reservado casi exclusivamente para carreras
+de otras áreas, muchas veces haciendo énfasis en la construcción paulatina de un estudio
+a lo largo de los años y con el esfuerzo de varios académicos.
+
+Es raro encontrar que, en México, la tecnología sea aplicada a los intereses de análisis
+político, por lo que el proyecto elaborado no cuenta con una base sobre la cuál soportarse
+que no sea un trabajo académico, o, en éste caso, una tésis de grado.
+
+La información encontrada ha sido exclusiva a dos áreas: la gramatical y académica, 
+perteneciente al área política; y la tecnológica y técnica, perteneciente al desarrollo
+y aplicación de redes neuronales recurrentes.
+
+Como parte del desarrollo de éste proyecto va orientado a proveer un apoyo al análisis
+necesario y veloz para una tésis, no es posible compartir la totalidad de ésta, que sigue
+en proceso de elaboración. Sin embargo, todo lo necesario ya ha sido mencionado y agregado
+en las primeras partes de éste reporte.
 <!--
 ¿Dónde lo han aplicado o dónde podemos encontrarlo?
 -->
@@ -230,9 +302,25 @@ Aquí, mencionar a detalle las herramientas que usaremos:
 - De donde sacamos los corpus
 - Mongo y Compas
 - Clusterización
-  - Latent Dirichlet Allocation
 - Embedding
 -->
+El proyecto requirió de obtener primeramente los boletines de prensa, éstos los tomamos
+directamente de las páginas de los candidatos (los métodos y herramientas se describen más
+adelante). Para cada uno se recuperaron los boletines de prensa específicamente dentro de
+la campaña electoral; de éstas se tuvo que realizar un scrapping para obtener información.
+
+Las herramientas utilizadas a lo largo del proyecto fueron:
+
+#### MongoDB y Compass
+
+Para el almacenamiento de la información procesada, se utilizó MongoDB, y especialmente,
+su herramienta Compass para visualizar la información de manera gráfica, ya que Compass
+integra una herramienta capaz de realizar el análisis del esquema utilizado, de modo que
+se pudo visualizar información útil acerca de nuestro dataset.
+
+#### Clusterización
+
+<!-- Aquí tenemos que exponer la herramienta o método utilizado para la clusterización -->
 
 ## Método Experimental
 
@@ -305,17 +393,56 @@ Para la obtención del set de datos se recurrió a dos medios:
   - ![Screenshot página suspendida](./Corpus/RAC/ss-pag-suspendida.png)
 
 <!-- Hay algun metodo de scraping? -->
+El Web Scrapping se realizó utilizando herramientas como Selenium y BeautifulSoup 4, mismas que
+ayudaron a filtrar los elementos que se buscaron dentro de las páginas web.
 
 #### Limpieza de los datos
 
 <!-- Revisas que onda con MongoDB y Compas -->
+No es posible trabajar con los datos sin realizar la limpieza de las palabras, de modo que sólo
+conservaremos las palabras relevantes en los formatos que busquemos y consideremos útiles.
+Para ésto, después del web scrapping, la limpieza de elementos no léxicos y correcciones de
+formato para encabezados, sumarios y boletines en general (doble espacio, salto de línea, 
+acentos, etcétera). Para ésto, la tarea se segmentó en varios pasos:
+
+##### Preprocesamiento de Encabezados y Sumarios
+Se limpian los espacios y caracteres no léxicos (innecesarios) de los boletines en la BD.
+
+##### Preprocesamiento de Boletines
+Se cambia el nombre de los archivos para que tengan el mismo formato. Además, se modifico 
+el contenido de los boletines, quitando espacios dobles y más caracteres especiales, entre
+otros casos especiales en un par de boletines.
+
+##### Emparejamiento de cada Encabezado con su Boletín
+Se emparejan los encabezados con el texto correspondiente a su boletín dentro de la BD. El
+formato final es internamente almacenado en csv.
+
+##### Emparejamiento de Metadatos con su Boletín
+Se hace la búsque acera de los identificadores utilizados por los equipos de prensa para enumerar
+sus boletines/comunicados. Ésto es guardado en la BD.
+
+##### Limpieza de Encabezados y Sumarios para cada Boletín.
+Se elimina la información del contenido principal del archivo de la base de datos. Éstos ya se
+encuentran estructurados dentro de cada archivo, por lo que es innecesario retenerlos.
 
 #### Encoding / Tokenización de los datos
+Para la tokenización de datos, fueron utilizadas dos herramientas:
+* CoreNLP Stanza. Por la Universidad de Stanford.
+* Freeling. del centro de investigaciones TALP, por la Universidad Politécnica de Cataluña.
 
-<!-- Revisas que onda con MongoDB y Compas -->
+Primeramente, CoreNLP Stanza permitió la tokenización del texto, etiquetar partes del discurso,
+y buscar entidades nombradas dentro de éste. Los tokens podemos dividirlos en sustantivos, verbos,
+puntuaciones, y entidades nombradas.
+El procedimiento tuvo que iterarse a lo largo de todos los boletines almacenados en la base de 
+datos.
+
+Para terminar la etapa, utilizando Freeling (que ofrece corpus unam) se construyó una función
+para hacer una conexión con el servicio. De éste modo, se pudo obtener un diccionario con las
+oraciones etiquetadas, lematizadas y tokenizadas.
 
 ### Descripción de su método
 
+##### vamos a ver
 <!--
 Aquí, hablamos de nuestra teoria propuesta
 
@@ -324,11 +451,69 @@ Aquí, hablamos de nuestra teoria propuesta
 - Embedding
 -->
 
-### Descripción del experimento
+Para poder hacer uso y obtener los resultados buscados dentro del proyecto, tuvimos que comenzar
+proponiéndonos el método por el cuál realizaríamos la clusterización de nuestros datos. Sabemos
+cómo obtenerlos y preprocesarlos. Lo que viene ahora, es el manejo de ellos para generar resultados.
 
-<!--
-Aquí, cómo lo hicimos
--->
+#### Clusterización
+
+##### LSTM en lugar de LDA
+
+Inicialmente habíamos considerado utilizar LDA, sin embargo, nos pareció más útil recurrir
+a un LSTM, que nos proporcionó más utilidad para el problema a resolver. LDA no fue del todo
+inútil, pero su implementación no llegó a culminarse antes de decidir un cambio.
+Comparado con un LSTM, ambos nos permiten etiquetar y clasificar, pero LDA se encontraba
+más orientado a la generación de documentos basádo en palabras y tópicos, mientras que LSTM,
+mientras realiza algo similar, nos permite estar retroalimentándonos de estados anteriores
+dentro de nuestros mismos documentos, por lo que, finalmente, fue la herramienta que utilizamos.
+
+#### Embedding
+
+De modo que, realizar embedding de palabras nos proporciona una representación mucho más profunda
+acerca de cada una de ellas, decidimos utilizar ésta técnica por sobre la bolsa de palabras para
+poder hacer clasificaciones más correctas.
+Cada palabra quedaría dispuesta en un espacio vectorial donde cada vector representaría la pertenencia
+de cada una de nuestras palabras con respecto a las categorías determinadas. La posición de cada uno
+de nuestros vectores sería determinada y entrenada utilizando nuestro dataset de boletines políticos.
+
+#### LSTM
+
+El uso de redes neuronales recurrentes que se consideran de tipo temporales como las long short-term memory resultan favoravles para la clasificacion propuesta previamente, las categorias definidas dependen del verbo usado asi como de las palabras que la acompñan, por ende, las palabras que preceden y anteceden al verbo de interes aportan informacion util para la clasificación.
+
+Dado que el texto se puede ver como una secuencia de palabras, el orden en el que se presentan determina la categoria a la que pertenecen.
+
+<img src="rsc\lstm.png"
+     alt="Markdown Monster icon"
+     width="800" height="400"
+     style="float: left; margin-right: 10px;" />
+
+La LSTM tiene la habilidad de agregar o remover informacion dentro de cada estado de manera regulada. Se procedio a etiquetar los datos de manera supervisada para generar un set de entrenamiento, dado que cada oracion podia ser multiclase se uso una lstm multiclase con la cual obteniamos la probabilidad de que la oracion fuera de cierta clase. 
+
+### Descripción del experimento
+ 
+#### Preprocesamiento de encabezados
+
+Gran parte de la informacion que provee un boletin se encuentra en el encabezado y podemos determinar de que va el contenido del mismo. para eso se procedio a extraerlos a traves de pymongo y procesarlos con el script 1_preprocesado_encabezados_sumarios.ipynb.
+
+#### Emparejar metadatos
+
+Se procedio a buscar fechas, localidades y el identificador intero del boletin principal usando mongo y pymongo para poder realizar la busquedas y posterior clasificacion. Tambien se busco normalizar los documentos para que tuvieran el mismo formato pues hubo variedad en la presentacion que hacia cada candidato.
+
+Dentro del emparejamiento tambien se realizo una busqueda interna con los encabezados y dentro de los documentos, habia varias inconsistencias en las fechas o que tenian diferentes formatos de las mismas.
+
+#### Contenido de los boletines
+
+Al haber elementos que aportaban poca informacion o incluso elementos no lexicos se tuvo que proceder a leiminarlos, por ejemplo: espacios en blanco, saltos de linea, simbolos especiales, etc.
+
+#### Embbeding
+
+Esta parte es importante realizarla antes de el entrenamiento de la red neuronal pues ocupamos un metodo para poder vectorizar las palabras y generar un modelo matematico de las palabras y asi que esta transformacion sea entendible para la red neuronal 
+
+#### Clasificador de persuacion
+
+Para este paso, las clases ya habian sido previamente definidas aunque durante los primeros entrenamientos, nos percatamos que hacian falta subcategorias, dentro de la categoria cognitiva y volitiva. al agregarlas si bien se pudo realizar un mejor entrenamiento no fue tan contundente el cambio dentro de la validacion del modelo. 
+
+Para obtener la persuación procedimos a realizar el entrenamiento de la red LSTM.
 
 ### Presentación de resultados
 
@@ -338,6 +523,7 @@ Aquí, mostramos resultados wuiiiiiiiiiiiiiiiiiii
 
 ## Conclusión
 
+Dentro del uso de la LSTM se empleo el modelo creado durante el emmbeding. El uso de LSTM presento varios problemas, la validacion del modelo no fue la deseada y el dataset empleado no estaba balanceado en las categorias por lo que era mas posible que terminara perteneciendo a la clase con mas ejemplos, sin contar que al ser categorias que no son mutuamente excluyentes es fue dificil determinar a partir de que valor probabilidad se consideraba que pertenecian a cierta clase o no.
 <!--
 Todo esto hasta el final :'v
 -->
