@@ -1,0 +1,13 @@
+{
+    "embeddings": [
+      {
+        "tensorName": "Embeddings Boletines",
+        "tensorShape": [
+          7474,
+          64
+        ],
+        "tensorPath": "https://raw.githubusercontent.com/gandresto/APIT-2020-2/master/ProyectoFinal/Embeddings/embeddings.csv",
+        "metadataPath": "https://raw.githubusercontent.com/gandresto/APIT-2020-2/master/ProyectoFinal/Embeddings/word_labels_corenlp.txt"
+      }
+    ]
+}
