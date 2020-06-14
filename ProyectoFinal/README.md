@@ -280,7 +280,11 @@ El uso de redes neuronales recurrentes que se consideran de tipo temporales como
 
 Dado que el texto se puede ver como una secuencia de palabras, el orden en el que se presentan determina la categoría a la que pertenecen.
 
+<div align="center">
+
 ![lstm](./rsc/lstm.png)
+
+</div>
 
 La LSTM tiene la habilidad de agregar o remover información dentro de cada estado de manera regulada. Se procedió a etiquetar los datos de manera supervisada para generar un set de entrenamiento, dado que cada oración podía ser multiclase se uso una LSTM multiclase con la cual obteníamos la probabilidad de que la oración fuera de cierta clase.
 
@@ -289,7 +293,11 @@ puerta de salida y una puerta de olvido. La celda recuerda valores en
 intervalos de tiempo arbitrarios y las tres puertas regulan el flujo de
 información dentro y fuera de la celda.
 
+<div align="center">
+
 ![lstm](./rsc/lstm-gates.jpg)
+
+</div>
 
 #### Análisis de Sentimientos utilizando LSTM
 
@@ -393,7 +401,11 @@ y las siguientes bibliotecas y frameworks:
 La propuesta del proyecto y su implementación queda resumida en el
 siguiente diagrama:
 
+<div align="center">
+
 ![Propuesta de solucion](./rsc/propuesta-solucion.png)
+
+</div>
 
 ### Datos
 
@@ -461,8 +473,12 @@ de transparencia.
 - Boletines
   - En formato doc, [aquí](./Corpus/RAC/docs).
   - En web: la cuenta [ricardoanaya.com.mx](ricardoanaya.com.mx) fue cerrada el 26 de marzo de 2019.
-  - ![Screenshot página suspendida](./Corpus/RAC/ss-pag-suspendida.png)
 
+<div align="center">
+
+  ![Screenshot página suspendida](./Corpus/RAC/ss-pag-suspendida.png)
+
+</div>
 
 #### Limpieza de los datos
 
@@ -500,7 +516,11 @@ herramienta [pandoc](https://es.wikipedia.org/wiki/Pandoc).
 
 Una vez limpios los datos y almacenados en Mongo, la estructura de los datos era la siguiente:
 
+<div align="center">
+
 ![datos limpios](./rsc/datos-limpios.png)
+
+</div>
 
 - **Tokenización de los datos:**
   Para la tokenización de datos, fueron utilizadas dos herramientas:
@@ -522,6 +542,8 @@ Una vez limpios los datos y almacenados en Mongo, la estructura de los datos era
 
 Posterior a tokenizar la información el diagrama de la base de datos quedo de la siguiente manera:
 
+<div align="center">
+
 ![datos en Core NLP](./rsc/datos-core-nlp.png)
 
 Datos en Core NLP.
@@ -529,6 +551,8 @@ Datos en Core NLP.
 ![datos en Freenling](./rsc/datos-freeling.png)
 
 Datos en Freeling.
+
+</div>
 
 ### Descripción de su método
 
@@ -587,9 +611,13 @@ Los tokens resultantes se indexaron para trabajarlos de manera
 numérica. Se utilizó 70% del corpus para entrenamiento
 y 30% para la evaluación.
 
+<div align="center">
+
 ![Entrenamiento de embeddings](./rsc/embeddings-train.png)
 
 Resultados del modelo de embeddings.
+
+</div>
 
 [El notebook utilizado fue éste](./Embeddings/embeddings_train.ipynb).
 
@@ -605,11 +633,37 @@ Los pesos de los embeddings generados fueron utilizados para
 inicializar los pesos de la capa de embeddings del modelo de
 clasificación.
 
+Una visualización de los embeddings resultantes (como la
+  mostrada en las imágenes) puede ser vista en [éste enlace](https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/gandresto/APIT-2020-2/master/ProyectoFinal/projector_config.json)
+
+<div align="center">
+
+![Visualización de embeddings](./rsc/embeddings-viz.png)
+
+Nube de embeedings.
+
+![Visualización de embeddings cercanos a dijo](./rsc/embeddings-viz-2.png)
+
+Nube de embeedings cercanos al token "dijo".
+
+</div>
+
+
 #### Etiquetado del set de datos para el clasificador
 
 Del corpus se eligieron aleatoriamente 400 oraciones que se
 etiquetaron manualmente con las categorías propuestas en la tesis
-de referencia.
+de referencia para el análisis persuasivo.
+
+Estas son:
+
+1. Construcción del emisor/candidato (C1)
+2. Promesa de campaña (C2)
+3. Construcción del adversario (E1)
+4. Exageración de la información (E2)
+5. Recurso retórico (E3)
+6. Apelación al miedo (E4)
+7. Llamado al voto (V1)
 
 Las oraciones etiquetadas se pueden encontrar [aquí](./AnálisisPersuasivo/Corpus/Train/).
 
@@ -647,17 +701,150 @@ Multi hot de las categorias de ejemplo
  [0, 0, 0, 0, 0, 0, 0]]
 ~~~
 
+Con las clases identificadas en el corpus etiquetado se obtuvo la
+matriz de correlación entre clases para entender su comportamiento
+multi clase.
+
+<div align="center">
+
+![Matriz de correlación](./rsc/matriz-correlacion-clases.png)
+
+Matriz de correlación entre las clases.
+
+</div>
+
+Otro valor de referencia fue la probabilidad condicional entre
+categorías para entender el comportamiento de estas, ya fuera
+que hayan sido o no seleccionadas.
+
+En las gráficas podemos observar las probabilidades condicionales
+para todas las clases (C2, E1, E2, E3, E4, V1) siendo que la clase
+C1 ya fue seleccionada (valor de 1) o no ha sido seleccionada
+(valor de 0).
+
+<div align="center">
+
+![Probabilidad condicional entre clases](./rsc/probabilidad-condicional-categorias.png)
+
+Probabilidad condicional entre clases.
+
+</div>
+
+El modelo de clasificación es similar al modelo de embedding con
+la diferencia de que en este modelo se utilizó una Bi-LSTM
+(la cual es bidireccional), su capa de salida es una función
+sigmoide (en la anterior fue una softmax) y solamente se tomó en
+cuenta la ultima salida de la secuencia de entrada (oración).
+
+<div align="center">
+
+![Modelo del clasificador](./rsc/modelo-clasificador.png)
+
+Modelo del clasificador.
+</div>
+
+El desempeño del modelo medido en función de la entropía cruzada
+binaria es el siguiente.
+
+<div align="center">
+
+![Entropía cruzada del modelo](./rsc/clasificador-entrenamiento.png)
+
+Entropía cruzada binaria del modelo de clasificación.
+</div>
+
 ### Presentación de resultados
 
-<!--
-Aquí, mostramos resultados wuiiiiiiiiiiiiiiiiiii
--->
+Como se pudo observar de la grafica de la entropía cruzada binaria
+el modelo no generaliza, incluso, podríamos decir que hace un
+sobre ajuste de las categorías en el corpus de evaluación.
+
+Algunos de los resultados arrojados por el clasificador son:
+
+~~~
+==================================================
+Recordó que cuando fue jefe de Gobierno , llevó a cabo un programa
+para construir 150 mil viviendas en la Ciudad de México y ahora
+hará un programa de vivienda para ayudar a los afectados por el
+sismo en este municipio .
+
+Categorías inferidas: C2
+
+Probabilidades
+C1	C2	E1	E2	E3	E4	V1
+0.003	0.999	0.000	0.004	0.000	0.000	0.000
+==================================================
+
+==================================================
+Describió que el de sus adversarios tienen que ver con las élites
+del poder económico y del poder político y el proyecto de millones
+de mexicanos es la transformación del país , por eso se logra la
+unidad de todos los partidos , no es solo MORENA , el PT , el PES
+, sino militantes de todos los partidos , porque solo el pueblo
+unido y organizado puede salvar a la nación .
+
+Categorías inferidas: C1
+
+Probabilidades
+C1	C2	E1	E2	E3	E4	V1
+0.943	0.000	0.000	0.000	0.000	0.000	0.000
+==================================================
+
+==================================================
+Por la tarde , López Obrador estará Tecamachalco y Atlixco ,
+Puebla .
+
+Categorías inferidas: NA
+
+Probabilidades
+C1	C2	E1	E2	E3	E4	V1
+0.004	0.000	0.001	0.000	0.000	0.000	0.025
+==================================================
+
+==================================================
+" Qué hicieron estos tecnócratas , acabaron la industria petrolera
+, va a así en picada la industria petrolera , todavía en el 2004
+la producción de petróleo era de 3 millones 400 mil barriles
+diarios , ahora 2 millones 100 mil barriles diarios , más de un
+millón de barriles diarios han dejado de producir tan solo en el
+gobierno de Fox , de Calderón y de Peña Nieto " , dijo .
+
+Categorías inferidas: C1, C2
+
+Probabilidades
+C1	C2	E1	E2	E3	E4	V1
+0.999	0.962	0.000	0.006	0.089	0.000	0.000
+==================================================
+
+==================================================
+Recordó que hay una sentencia que acredita que Napoleón Gómez
+Urrutia les robó a sus agremiados .
+
+Categorías inferidas: NA
+
+Probabilidades
+C1	C2	E1	E2	E3	E4	V1
+0.000	0.000	0.000	0.000	0.000	0.000	0.000
+==================================================
+
+==================================================
+Se comprometió a que la Secretaría de Comunicaciones y Transportes
+estén en San Luis Potosí , porque se necesita reactivar la
+economía en los estados , que no haya centralismo .
+
+Categorías inferidas: C1
+
+Probabilidades
+C1	C2	E1	E2	E3	E4	V1
+0.929	0.054	0.060	0.000	0.006	0.000	0.000
+==================================================
+~~~
+
+El notebook con la etapa de evaluación se puede encontrar [aquí](./AnálisisPersuasivo/clasificador-test.ipynb)
 
 ## Conclusión
 
-<!--
-Todo esto hasta el final :'v
--->
+Los resultados del modelo
 
 ### Discusión de sus resultados
 
@@ -665,7 +852,12 @@ Todo esto hasta el final :'v
 
 ### Trabajo futuro
 
+
+<!--
+
 ## Bibliografía
 
 - [Análisis de sentimiento](https://es.wikipedia.org/wiki/An%C3%A1lisis_de_sentimiento)
 - [Structure of the LSTM cell and equations that describe the gates of an LSTM cell](https://www.researchgate.net/figure/Structure-of-the-LSTM-cell-and-equations-that-describe-the-gates-of-an-LSTM-cell_fig5_329362532)
+
+-->
