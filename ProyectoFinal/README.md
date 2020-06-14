@@ -11,17 +11,25 @@
 ##### Equipo:
 
 - Aguilar Enriquez, Paul Sebastian
-- Alemán, Gustavo Adolfo
-- Esparza, Luis Mauricio
+- Alemán Sánchez, Gustavo Adolfo
+- Esparza Vázquez, Luis Mauricio
 - González Flores, Andrés
 
 ## Introducción
 
-<!--
-Hablar de cuál es el contenido del documento.
+En este documento se presenta el trabajo desarrollado durante la materia
+de Análisis y Procesamiento Inteligente de Textos con el fin de proponer un modelo
+de clasificación para categorías de análisis de discurso persuasivo en
+los boletines de prensa de la campaña de elecciones presidenciales del
+año 2018 en México.
 
-Esto lo puedo hacer al final (Paul).
--->
+El contenido del documento muestra las diferentes fases del proyecto, incluyendo
+la presentación del problema y su contexto, la adquisición del corpus y su
+pre-procesamiento, la construcción de un modelo de embeddings y la construcción
+de un modelo para clasificar oraciones.
+
+**Nota:** Si estas leyendo este documento en su versión PDF, te recomendamos que
+mejor leas su versión original [en éste enlace](./README.md).
 
 ### Motivación
 
@@ -472,7 +480,7 @@ de transparencia.
 - [Respuesta a solicitud de transparencia](./Corpus/RAC/Respuesta-73-19.md).
 - Boletines
   - En formato doc, [aquí](./Corpus/RAC/docs).
-  - En web: la cuenta [ricardoanaya.com.mx](ricardoanaya.com.mx) fue cerrada el 26 de marzo de 2019.
+  - En web: la cuenta [http://ricardoanaya.com.mx](http://ricardoanaya.com.mx) fue cerrada el 26 de marzo de 2019.
 
 <div align="center">
 
@@ -597,7 +605,13 @@ directamente desde Mongo, [aquí el script](./helpers/boletines.py).
 
 El modelo utilizado fue:
 
---- Imagen
+<div align="center">
+
+![Modelo para los embeddins](./rsc/LSTM-Embeddings.png)
+
+Modelo para los embeddings.
+
+</div>
 
 La idea del modelo utilizado fue lograr predecir la palabra
 siguiente con el fin de crear los embeddings.
@@ -619,10 +633,10 @@ Resultados del modelo de embeddings.
 
 </div>
 
-[El notebook utilizado fue éste](./Embeddings/embeddings_train.ipynb).
+El notebook para el entrenamiento del embedding se puede encontrar [aquí](./Embeddings/embeddings_train.ipynb).
 
-[En este notebook](./Embeddings/test_model.ipynb) se puede ver el
-uso de los embeddings para predecir la siguiente palabra,
+[En este otro notebook](./Embeddings/test_model.ipynb) se puede
+ver el uso de los embeddings para predecir la siguiente palabra,
 permitiendo implementar dos modelos de generación de texto, uno
 basado en la palabra que maximiza la probabilidad de salida en el
 modelo, y otro basado en la probabilidad de la siguiente palabra.
@@ -738,7 +752,7 @@ cuenta la ultima salida de la secuencia de entrada (oración).
 
 <div align="center">
 
-![Modelo del clasificador](./rsc/modelo-clasificador.png)
+![Modelo del clasificador](./rsc/Bi-LSTM.png)
 
 Modelo del clasificador.
 </div>
@@ -759,22 +773,12 @@ Como se pudo observar de la grafica de la entropía cruzada binaria
 el modelo no generaliza, incluso, podríamos decir que hace un
 sobre ajuste de las categorías en el corpus de evaluación.
 
-Algunos de los resultados arrojados por el clasificador son:
+El notebook con la etapa de evaluación se puede encontrar [aquí](./AnálisisPersuasivo/clasificador-test.ipynb).
+
+Algunos de los resultados obtenidos se muestran a continuación
+con su respectivo análisis.
 
 ~~~
-==================================================
-Recordó que cuando fue jefe de Gobierno , llevó a cabo un programa
-para construir 150 mil viviendas en la Ciudad de México y ahora
-hará un programa de vivienda para ayudar a los afectados por el
-sismo en este municipio .
-
-Categorías inferidas: C2
-
-Probabilidades
-C1	C2	E1	E2	E3	E4	V1
-0.003	0.999	0.000	0.004	0.000	0.000	0.000
-==================================================
-
 ==================================================
 Describió que el de sus adversarios tienen que ver con las élites
 del poder económico y del poder político y el proyecto de millones
@@ -786,10 +790,21 @@ unido y organizado puede salvar a la nación .
 Categorías inferidas: C1
 
 Probabilidades
-C1	C2	E1	E2	E3	E4	V1
-0.943	0.000	0.000	0.000	0.000	0.000	0.000
+C1    C2    E1    E2    E3    E4    V1
+0.943    0.000    0.000    0.000    0.000    0.000    0.000
 ==================================================
+~~~
 
+La oración anterior construye a los candidatos colocándolos como una
+oposición en contra de la ciudadanía. Genera una réplica a
+el discurso de oposición desacreditando indirectamente a sus
+propuestas basándose en los grupos a los que pertenezcan.
+
+Por ésto, sería correcto etiquetar con un E1, sin embargo
+lo que la red nos arrojó fue un C1. Muchos elementos en esta
+oración se refieren a grupos de personas, y una cualidad de C1 es la pertenencia a grupos. Se entiende que la confusión pudo venir de ahí.
+
+~~~
 ==================================================
 Por la tarde , López Obrador estará Tecamachalco y Atlixco ,
 Puebla .
@@ -797,10 +812,47 @@ Puebla .
 Categorías inferidas: NA
 
 Probabilidades
-C1	C2	E1	E2	E3	E4	V1
-0.004	0.000	0.001	0.000	0.000	0.000	0.025
+C1    C2    E1    E2    E3    E4    V1
+0.004    0.000    0.001    0.000    0.000    0.000    0.025
 ==================================================
+~~~
 
+La red etiquetó la oración anterior de manera correcta.
+
+La mayor probabilidad de categoría fue de V1, sin embargo
+es una probabilidad descartable. La alta cantidad de entidades
+nombradas, así como una carencia casi completa de verbos, pudo
+haber orillado a la red a no concluir nada y etiquetar de la
+manera esperada.
+
+~~~
+==================================================
+Se comprometió a que la Secretaría de Comunicaciones y Transportes
+estén en San Luis Potosí , porque se necesita reactivar la
+economía en los estados , que no haya centralismo .
+
+Categorías inferidas: C1
+
+Probabilidades
+C1    C2    E1    E2    E3    E4    V1
+0.929    0.054    0.060    0.000    0.006    0.000    0.000
+==================================================
+~~~
+
+La oración anterior debería poseer una etiqueta C2, debido a que es una
+promesa de campaña, sin embargo, la red nos arrojó una etiqueta
+C1, de construcción de candidato.
+
+Otra de las cualidades dentro de C1 es la capacidad de colocarse
+como una persona confiable y con capacidades de guiar a un país,
+por lo que la confusión podría venir por la similitud y ambigüedad
+que genera una promesa; mientras se promete hacer algo, se asegura
+que existe poder personal (una construcción/autodenominación).
+
+Promesa de campaña también podría vertirse dentro de la descripción
+de las cualidades personales, cayendo erróneamente en C1.
+
+~~~
 ==================================================
 " Qué hicieron estos tecnócratas , acabaron la industria petrolera
 , va a así en picada la industria petrolera , todavía en el 2004
@@ -812,52 +864,86 @@ gobierno de Fox , de Calderón y de Peña Nieto " , dijo .
 Categorías inferidas: C1, C2
 
 Probabilidades
-C1	C2	E1	E2	E3	E4	V1
-0.999	0.962	0.000	0.006	0.089	0.000	0.000
-==================================================
-
-==================================================
-Recordó que hay una sentencia que acredita que Napoleón Gómez
-Urrutia les robó a sus agremiados .
-
-Categorías inferidas: NA
-
-Probabilidades
-C1	C2	E1	E2	E3	E4	V1
-0.000	0.000	0.000	0.000	0.000	0.000	0.000
-==================================================
-
-==================================================
-Se comprometió a que la Secretaría de Comunicaciones y Transportes
-estén en San Luis Potosí , porque se necesita reactivar la
-economía en los estados , que no haya centralismo .
-
-Categorías inferidas: C1
-
-Probabilidades
-C1	C2	E1	E2	E3	E4	V1
-0.929	0.054	0.060	0.000	0.006	0.000	0.000
+C1    C2    E1    E2    E3    E4    V1
+0.999    0.962    0.000    0.006    0.089    0.000    0.000
 ==================================================
 ~~~
 
-El notebook con la etapa de evaluación se puede encontrar [aquí](./AnálisisPersuasivo/clasificador-test.ipynb)
+En la oración anterior la red nos arrojó dos resultados
+incorrectos y no estuvo
+cerca de etiquetar la categoría necesaria.
+Por un lado, C1 y C2 hacen referencia hacia el mismo candidato.
+Cuando se habla de otros, y mezclamos factores de aversión, la
+etiqueta correcta sería E1 y E4, construcción del adversario y
+apelación al miedo.
+
+El error podría provenir del tipo de información. La red no entiende
+en qué contexto se habla de cantidades; no hace una comparación.
+Si abstraemos el problema, se tiene una oración con verbos como
+"producir", "acabar", siendo que la red mayormente utiliza éstos para
+prometer (producir empleos y acabar con la violencia/corrupción).
+
+Hemos visto antes que existe confusión cuando hay promesas. La red
+entiende una promesa como una exaltación de la persona, por lo que
+se entiende que el error vino de los verbos y la falta de contexto por
+parte de la red.
+
+~~~
+==================================================
+Recordó que cuando fue jefe de Gobierno , llevó a cabo un programa
+para construir 150 mil viviendas en la Ciudad de México y ahora
+hará un programa de vivienda para ayudar a los afectados por el
+sismo en este municipio .
+
+Categorías inferidas: C2
+
+Probabilidades
+C1  C2  E1  E2  E3  E4  V1
+0.003 0.999 0.000 0.004 0.000 0.000 0.000
+==================================================
+~~~
+
+En la oración anterior la categoría entregada fue C2, siendo que la categoría
+correcta debería ser C1 o ninguna.
+
+La confusión viene dependiendo del intérprete. Al narrar una
+actividad que sucedió en el pasado, se forja una construcción
+personal del candidato, C1, pero la condición que se busca, es
+pertenecer a un grupo (que no sucede) o la utilización de palabras
+que autodeterminen (que tampoco ocurre).
+
+Al hablar de resultados, se podría confundir con hablar de promesas;
+'construir', 'hará', 'ayudar', generan un contexto donde las palabras
+que rigen al tópico se ligan con palabras encontradas en C2.
 
 ## Conclusión
 
-Los resultados del modelo
+Los resultados del modelo pudieron verse sesgados por la cantidad
+de elementos del corpus (era un corpus pequeño) y la posibilidad
+de que una oración fuese multiclase.
 
-### Discusión de sus resultados
+Debido a la cantidad de trabajo que se realizo durante este
+proyecto pudimos utilizar diversas herramientas que consideramos
+nos dejan un gran aprendizaje.
 
-### Descripción de observaciones
+Si bien los resultados obtenidos por el enfoque que se utilizó no
+consideramos que fueran los mejores, creemos que nos da pie a
+entender mejor los problemas que requieren clasificación multiclase
+y nos da ideas para proponer otros abordajes.
+
+También intuimos que el set de datos, al estar acotado en un solo
+contexto, pudo haber estado sesgado al no tener variedad de temas
+que permitieran identificar claramente las clases. Por el contenido
+semántico de las oraciones era complicado identificar las
+categorías de manera sencilla.
 
 ### Trabajo futuro
 
+- Utilizar otro modelo de embedding como Word2Vec
+- Utilizar modelos basados en transformers como BERT o ELMo
+- Tener un conjunto de datos mas robustos, tal vez con más etiquetado
+- Refinar las condiciones entre categorías
+- Generalizar el corpus con boletines de campaña de otros años y otras elecciones para incrementar tu tamaño y que no tenga un sesgo.
 
-<!--
 
-## Bibliografía
-
-- [Análisis de sentimiento](https://es.wikipedia.org/wiki/An%C3%A1lisis_de_sentimiento)
-- [Structure of the LSTM cell and equations that describe the gates of an LSTM cell](https://www.researchgate.net/figure/Structure-of-the-LSTM-cell-and-equations-that-describe-the-gates-of-an-LSTM-cell_fig5_329362532)
-
--->
+<!-- Profe, Si encuentra éste mensaje le disparamos el Soundtrack de su anime favorito uwu , escribanos un tuit a @_penserbjorne @mauevaz @gandresto  -->
